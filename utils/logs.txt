@@ -1,0 +1,211 @@
+LOG FLUSHED: 2025-02-06 17:00:22.309894
+[2025-02-06 17:00:22] [DEBUG] Logger initialized with default file storage at C:\Users\Logan\Documents\GitHub\Webslinger\utils\logger\..\..\utils\logs.txt.
+[2025-02-06 17:00:22] [DEBUG] start SystemControllerInterface__init__(self)
+[2025-02-06 17:00:22] [DEBUG] start InputManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] start DataInterpreter __init__(self)
+[2025-02-06 17:00:22] [DEBUG] end DataInterpreter __init__(self)
+[2025-02-06 17:00:22] [DEBUG] end InputManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] start ViewManager __init__(self, <src.controllers.system_controller.SystemControllerInterface object at 0x000001EAD67AB7A0>)
+[2025-02-06 17:00:22] [DEBUG] start ViewRequestInterpreter __init__(self)
+[2025-02-06 17:00:22] [DEBUG] ViewRequestInterpreter initialized.
+[2025-02-06 17:00:22] [DEBUG] end ViewRequestInterpreter __init__(self)
+[2025-02-06 17:00:22] [DEBUG] end ViewManager __init__(self, controller)
+[2025-02-06 17:00:22] [DEBUG] start ExportManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] end ExportManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] start NetworkManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] end NetworkManager __init__(self)
+[2025-02-06 17:00:22] [DEBUG] SystemControllerInterface initialized.
+[2025-02-06 17:00:22] [DEBUG] Submiting default cli view request
+[2025-02-06 17:00:22] [DEBUG] start submit_view_request(self, cli)
+[2025-02-06 17:00:22] [DEBUG] start handle_view_request(self, cli)
+[2025-02-06 17:00:22] [DEBUG] start get_view_strategy(self, cli, <src.controllers.system_controller.SystemControllerInterface object at 0x000001EAD67AB7A0>)
+[2025-02-06 17:00:22] [DEBUG] CLI view strategy selected.
+[2025-02-06 17:00:22] [DEBUG] end get_view_strategy(self, view_request, controller)
+[2025-02-06 17:00:22] [DEBUG] start InputManager __init__(self, <src.controllers.system_controller.SystemControllerInterface object at 0x000001EAD67AB7A0>)
+[2025-02-06 17:00:22] [DEBUG] end InputManager __init__(self, controller)
+[2025-02-06 17:00:22] [DEBUG] Selected view strategy: <src.views.cli_view.CommandLineView object at 0x000001EAD8CC6C90>
+[2025-02-06 17:00:22] [DEBUG] Starting new view strategy.
+[2025-02-06 17:00:22] [DEBUG] start start_view()
+[2025-02-06 17:00:22] [DEBUG] start clear_view()
+[2025-02-06 17:00:22] [DEBUG] end clear_view()
+[2025-02-06 17:00:22] [DEBUG] start run()
+[2025-02-06 17:00:22] [DEBUG] Propting user for command.
+[2025-02-06 17:00:23] [DEBUG] start clear_view()
+[2025-02-06 17:00:23] [DEBUG] end clear_view()
+[2025-02-06 17:00:23] [DEBUG] Command entered: input_network C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx
+[2025-02-06 17:00:23] [DEBUG] start input_network(self, C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx)
+[2025-02-06 17:00:23] [DEBUG] start get_network __init__(self, C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx)
+[2025-02-06 17:00:23] [DEBUG] start get_data_processing_strategy __init__(self, C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx)
+[2025-02-06 17:00:23] [DEBUG] File details - Name: TriangleNetworkData.xlsx, Size: 8232 bytes, Extension: .xlsx
+[2025-02-06 17:00:23] [DEBUG] This is an Excel file.
+[2025-02-06 17:00:23] [DEBUG] end DataInterpreter __init__(self, input_data)
+[2025-02-06 17:00:23] [DEBUG] start ExcelDataStrategy __init__(self)
+[2025-02-06 17:00:23] [DEBUG] end ExcelDataStrategy __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start validate __init__(self, C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx)
+[2025-02-06 17:00:23] [DEBUG] end validate __init__(self, input_data)
+[2025-02-06 17:00:23] [DEBUG] end get_network __init__(self, input_data)
+[2025-02-06 17:00:23] [DEBUG] start parse __init__(self, C:\Users\Logan\Documents\GitHub\Webslinger\test\input_data\TriangleNetworkData.xlsx)
+[2025-02-06 17:00:23] [DEBUG] start Network __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NetworkProperties __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 1, 'N_X': 1, 'N_Y': 1})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=1
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=1
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=1
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 2, 'N_X': 4, 'N_Y': 5})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=2
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=4
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=5
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 3, 'N_X': 7, 'N_Y': 3})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=3
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=7
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=3
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 4, 'N_X': 2, 'N_Y': 2})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=4
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=2
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=2
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 5, 'N_X': 3, 'N_Y': 9})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=5
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=3
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=9
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 6, 'N_X': 5, 'N_Y': 8})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=6
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=5
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=8
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 7, 'N_X': 6, 'N_Y': 6})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=7
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=6
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=6
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start NodeProperties __init__(self, {'N_ID': 8, 'N_X': 9, 'N_Y': 4})
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_ID=8
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_X=9
+[2025-02-06 17:00:23] [DEBUG] NodeProperties attribute added N_Y=4
+[2025-02-06 17:00:23] [DEBUG] end NodeProperties __init__(self, node_data)
+[2025-02-06 17:00:23] [DEBUG] end Node __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 1, 'N_FROM': 1, 'N_TO': 2})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=1
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=1
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=2
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 2, 'N_FROM': 2, 'N_TO': 3})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=2
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=2
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=3
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 3, 'N_FROM': 2, 'N_TO': 4})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=3
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=2
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=4
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 4, 'N_FROM': 3, 'N_TO': 4})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=4
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=3
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=4
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 5, 'N_FROM': 4, 'N_TO': 5})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=5
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=4
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=5
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 6, 'N_FROM': 5, 'N_TO': 6})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=6
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=5
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=6
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 7, 'N_FROM': 6, 'N_TO': 7})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=7
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=6
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=7
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 8, 'N_FROM': 7, 'N_TO': 8})
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added E_ID=8
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_FROM=7
+[2025-02-06 17:00:23] [DEBUG] EdgeProperty attribute added N_TO=8
+[2025-02-06 17:00:23] [DEBUG] end EdgeProperties __init__(self, edge_data)
+[2025-02-06 17:00:23] [DEBUG] end Edge __init__(self)
+[2025-02-06 17:00:23] [DEBUG] Adding META_NETWORK_PROPERTY network_size: 100x100
+[2025-02-06 17:00:23] [DEBUG] Adding META_NETWORK_PROPERTY total_tension: 1400
+[2025-02-06 17:00:23] [DEBUG] Adding META_NETWORK_PROPERTY type: static
+[2025-02-06 17:00:23] [DEBUG] end NetworkProperties __init__(self)
+[2025-02-06 17:00:23] [DEBUG] ===== Network Properties =====
+[2025-02-06 17:00:23] [DEBUG] Nodes:
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 1, 'N_X': 1, 'N_Y': 1}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 2, 'N_X': 4, 'N_Y': 5}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 3, 'N_X': 7, 'N_Y': 3}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 4, 'N_X': 2, 'N_Y': 2}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 5, 'N_X': 3, 'N_Y': 9}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 6, 'N_X': 5, 'N_Y': 8}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 7, 'N_X': 6, 'N_Y': 6}
+[2025-02-06 17:00:23] [DEBUG] {'N_ID': 8, 'N_X': 9, 'N_Y': 4}
+[2025-02-06 17:00:23] [DEBUG] Edges:
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 1, 'N_FROM': 1, 'N_TO': 2}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 2, 'N_FROM': 2, 'N_TO': 3}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 3, 'N_FROM': 2, 'N_TO': 4}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 4, 'N_FROM': 3, 'N_TO': 4}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 5, 'N_FROM': 4, 'N_TO': 5}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 6, 'N_FROM': 5, 'N_TO': 6}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 7, 'N_FROM': 6, 'N_TO': 7}
+[2025-02-06 17:00:23] [DEBUG] {'E_ID': 8, 'N_FROM': 7, 'N_TO': 8}
+[2025-02-06 17:00:23] [DEBUG] Meta Properties:
+[2025-02-06 17:00:23] [DEBUG] network_size: 100x100
+[2025-02-06 17:00:23] [DEBUG] total_tension: 1400
+[2025-02-06 17:00:23] [DEBUG] type: static
+[2025-02-06 17:00:23] [DEBUG] ==============================
+[2025-02-06 17:00:23] [DEBUG] end Network __init__(self)
+[2025-02-06 17:00:23] [DEBUG] end parse __init__(self, input_data)
+[2025-02-06 17:00:23] [DEBUG] start set_network(self, <src.managers.network.network.Network object at 0x000001EAD6741100>)
+[2025-02-06 17:00:23] [DEBUG] end set_network_(self, network)
+[2025-02-06 17:00:23] [DEBUG] end input_network(self, input_data)
+[2025-02-06 17:00:23] [DEBUG] Propting user for command.
+[2025-02-06 17:02:09] [DEBUG] start clear_view()
+[2025-02-06 17:02:10] [DEBUG] end clear_view()
+[2025-02-06 17:02:10] [DEBUG] Command entered: help
+[2025-02-06 17:02:10] [DEBUG] start show_help()
+[2025-02-06 17:02:10] [DEBUG] end show_help()
+[2025-02-06 17:02:10] [DEBUG] Propting user for command.
+[2025-02-06 17:02:55] [DEBUG] start clear_view()
+[2025-02-06 17:02:55] [DEBUG] end clear_view()
+[2025-02-06 17:02:55] [DEBUG] Command entered: quit
+[2025-02-06 17:02:55] [DEBUG] start stop_view()
+[2025-02-06 17:02:55] [DEBUG] end stop_view()
+[2025-02-06 17:02:55] [DEBUG] end run()
+[2025-02-06 17:02:55] [DEBUG] end start_view()
+[2025-02-06 17:02:55] [DEBUG] end handle_view_request(self, cli)
+[2025-02-06 17:02:55] [DEBUG] end submit_view_request(self, view_request)
+[2025-02-06 17:02:55] [DEBUG] end SystemControllerInterface__init__(self)
