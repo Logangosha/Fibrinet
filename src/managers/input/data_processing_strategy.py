@@ -3,7 +3,7 @@ from utils.logger.logger import Logger
 class DataProcessingStrategy:
     """
     Abstract base class for data processing strategies.
-    This class defines the interface for validating and parsing input data.
+    This class defines the interface for processing input data.
     """
     # INITIALIZES DATAPROCESSINGSTRATEGY
     def __init__(self):
@@ -12,25 +12,11 @@ class DataProcessingStrategy:
         """
         Logger.log(f"start DataProcessingStrategy __init__(self)")
         Logger.log(f"end DataProcessingStrategy __init__(self)")
-
-    # VALIDATES INPUT DATA.
-    def validate(self, input_data):
-        """
-        Validates input data to match expected format.
-        
-        Parameters:
-        input_data: file input by user containing network data.
-        
-        Raises:
-        NotImplementedError: If not implemented in a subclass.
-        """
-        # MUST BE IMPLEMENTED IN A SUBCLASS TO VALIDATE INPUT
-        raise NotImplementedError()
     
-    # PARSES INPUT DATA.
-    def parse(self, input_data):
+    # PROCESS INPUT DATA.
+    def process(self, input_data):
         """
-        Parses input data to extract network data.
+        Process input data to extract network data.
         
         Parameters:
         input_data: file input by user containing network data.
@@ -38,5 +24,5 @@ class DataProcessingStrategy:
         Raises:
         NotImplementedError: If not implemented in a subclass.
         """
-        # MUST BE IMPLEMENTED IN A SUBCLASS TO PARSE INPUT
+        # MUST BE IMPLEMENTED IN A SUBCLASS TO PROCESS INPUT
         raise NotImplementedError()

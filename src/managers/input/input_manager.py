@@ -1,6 +1,6 @@
 from utils.logger.logger import Logger
 from .data_interpreter import DataInterpreter
-from ...models.exceptions import InvalidInputDataError
+from ...models.exceptions import InvalidInputDataError, UnsupportedFileTypeError
 
 class InputManager:
     """
@@ -27,11 +27,17 @@ class InputManager:
             InvalidInputDataError: If the data cannot be validated by the data_processing_strategy.
         """
         Logger.log(f"start get_network __init__(self, {input_data})")
+
         # GET DATA PROCESSING STRATEGY FROM INPUT DATA
-        data_processing_strategy = self.data_interpreter.get_data_processing_strategy(input_data)
-        # VALIDATE DATA
-        if data_processing_strategy.validate(input_data):
+        try:
+            data_processing_strategy = self.data_interpreter.get_data_processing_strategy(input_data)
+        except UnsupportedFileTypeError():
+            raise
+
+        try:
             Logger.log(f"end get_network __init__(self, input_data)")
-            return data_processing_strategy.parse(input_data)
-        else:
-            raise InvalidInputDataError()
+            # PROCESS DATA AND RETURN NETWORK
+            return data_processing_strategy.process(input_data)
+        except InvalidInputDataError:
+            raise
+        

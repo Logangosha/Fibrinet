@@ -1,5 +1,5 @@
-from src.views.cli_view import CommandLineView
-from src.views.tkinter_view import TkinterView
+from src.views.cli_view.cli_view import CommandLineView
+from src.views.tkinter_view.tkinter_view import TkinterView
 from utils.logger.logger import Logger
 
 # INTERPRETS VIEW REQUESTS AND RETURNS APPROPRIATE VIEW STRATEGY
@@ -12,8 +12,6 @@ class ViewRequestInterpreter:
         """
         Initializes the ViewRequestInterpreter.
         """
-        
-
         Logger.log(f"start ViewRequestInterpreter __init__(self)")
         Logger.log("ViewRequestInterpreter initialized.")
         Logger.log(f"end ViewRequestInterpreter __init__(self)")
@@ -32,7 +30,6 @@ class ViewRequestInterpreter:
         Raises:
             ValueError: If the provided view request is invalid.
         """
-        
 
         Logger.log(f"start get_view_strategy(self, {view_request}, {controller})")
 

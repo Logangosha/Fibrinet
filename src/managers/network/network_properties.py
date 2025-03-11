@@ -10,7 +10,7 @@ class NetworkProperties:
         """
         Initializes the NetworkProperties.
         """
-        Logger.log(f"start NetworkProperties __init__(self)")
+        Logger.log(f"start NetworkProperties __init__(self, {kwargs})")
         self.nodes = []
         self.edges = []
         self.meta_network_properties = {}
@@ -46,4 +46,4 @@ class NetworkProperties:
                 self.meta_network_properties[key] = value
                 Logger.log(f"Adding META_NETWORK_PROPERTY {key}: {value}")
 
-        Logger.log(f"end NetworkProperties __init__(self)")
+        Logger.log(f"end NetworkProperties __init__(self, **kwargs)")

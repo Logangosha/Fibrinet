@@ -2,8 +2,9 @@ from utils.logger.logger import Logger
 from ...models.exceptions import InvalidInputDataError
 from ..network.network import Network
 import pandas as pd
+from .data_processing_strategy import DataProcessingStrategy
 
-class ExcelDataStrategy:
+class ExcelDataStrategy(DataProcessingStrategy):
     """
     Handles data from an excel file.
     """
@@ -14,27 +15,11 @@ class ExcelDataStrategy:
         """
         Logger.log(f"start ExcelDataStrategy __init__(self)")
         Logger.log(f"end ExcelDataStrategy __init__(self)")
-
-    # VALIDATES INPUT DATA.
-    def validate(self, input_data):
-        """
-        Validates input data to match expected format.
-        
-        Parameters:
-        input_data: file input by user containing network data.
-        
-        Raises:
-        InvalidInputDataError: If input_data is invalid.
-        """
-        Logger.log(f"start validate __init__(self, {input_data})")
-        Logger.log(f"end validate __init__(self, input_data)")
-        # NOT YET IMPLEMENTED DEFAULT SET TO RETURN TRUE
-        return True
     
-    # PARSES INPUT DATA.
-    def parse(self, input_data):
+    # PROCESS INPUT DATA.
+    def process(self, input_data):
         """
-        Parses input data to extract network data. Returns dictionary of network data. 
+        Process input data to extract network data. Returns dictionary of network data. 
         
         Parameters:
         input_data: file input by user containing network data.
@@ -42,7 +27,7 @@ class ExcelDataStrategy:
         Raises:
         N/A
         """
-        Logger.log(f"start parse __init__(self, {input_data})")
+        Logger.log(f"start Process __init__(self, {input_data})")
 
         # LOAD THE ENTIRE SHEET INTO A DATAFRAME WITHOUT ASSUMING ANY HEADER
         # THE DATAFRAME IS A TABLE THAT PANDAS WILL USE TO STORE THE EXCEL CONTENT
@@ -100,6 +85,6 @@ class ExcelDataStrategy:
 
         # CREATE AND RETURN NETWORK
         network = Network(**tables)
-        Logger.log(f"end parse __init__(self, input_data)")
+        Logger.log(f"end Process __init__(self, input_data)")
         return network
     

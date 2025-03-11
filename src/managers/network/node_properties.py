@@ -4,11 +4,15 @@ class NodeProperties:
     """
     NodeProperties class is the container for the node's properties.
     """
-    # NodeProperties INITIALIZATION
+    # NODEPROPERTIES INITIALIZATION
     def __init__(self, node_data):
         """
         Initializes the NodeProperties instance
         """
+        # ATTRIBUTES FOUND IN INPUT
+        self.N_ID = None
+        self.N_X = None
+        self.N_Y = None
         Logger.log(f"start NodeProperties __init__(self, {node_data})")
         self.node_properties = {}
         for key, value in node_data.items():

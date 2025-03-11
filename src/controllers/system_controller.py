@@ -7,9 +7,6 @@ from utils.logger.local_file_strategy import LocalFileStrategy
 from src.models.system_state import SystemState
 from src.models.exceptions import StateTransitionError
 
-
-
-
 class SystemControllerInterface:
     """
     Main controller interface responsible for managing system components such as input, view, export, 
@@ -34,11 +31,9 @@ class SystemControllerInterface:
         
         # SUBMITS DEFAULT CLI VIEW REQUEST
         Logger.log("Submiting default cli view request")
-        self.submit_view_request("cli")  
+        self.initiate_view("cli")  
 
         Logger.log("end SystemControllerInterface__init__(self)")
-
-
 
     # HANDLES NETWORK INPUT
     def input_network(self, input_data):
@@ -49,30 +44,117 @@ class SystemControllerInterface:
         """
         
         Logger.log(f"start input_network(self, {input_data})")
-        self.network_manager.set_network(self.input_manager.get_network(input_data))
-        Logger.log(f"end input_network(self, input_data)")
-
-
-    # MODIFIES NETWORK CONFIGURATION IF STATE ALLOWS
-    def modify_network(self, modification_request):
-        """
-        Modifies network configuration if the network is loaded.
+        try: 
+            Logger.log("Setting network from input_manager network")
+            self.network_manager.set_network(self.input_manager.get_network(input_data))
+            self.network_manager.state_manager.add_new_network_state(self.network_manager.network)
+        except Exception as ex: raise ex
+        Logger.log(f"Is a network loaded? {bool(self.network_manager.network)}")
+        if self.network_manager.network:
+            Logger.log("Setting system state to network loaded true")
+            self.state.network_loaded = True
         
-        :param modification_request: Request containing network modification details.
+        Logger.log(f"end input_network(self, input_data)")     
+    
+    # DEGRADES A SPECIFIED NETWORK EDGE IF STATE ALLOWS
+    def degrade_edge(self, edge_id):
+        """
+        Degrades a specified network edge if the network is loaded.
+        
+        :param edge: The edge to be degraded.
         :raises StateTransitionError: If the network is not loaded.
         """
         
-
-        Logger.log(f"start modify_network(self, {modification_request})")
+        Logger.log(f"start degrade_edge(self, {edge_id})")
         if self.state.network_loaded:
-            Logger.log("Network modification request processed.")
-            pass
+            self.network_manager.degrade_edge(edge_id)
         else:
             Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
             raise StateTransitionError()
-        Logger.log(f"end modify_network(self, modification_request)")
-        
+        Logger.log(f"end degrade_edge(self, {edge_id})")
 
+    # DEGRADES A SPECIFIED NETWORK NODE IF STATE ALLOWS
+    def degrade_node(self, node_id):
+        """
+        Degrades a specified network node if the network is loaded.
+        
+        :param node: The node to be degraded.
+        :raises StateTransitionError: If the network is not loaded.
+        """
+        
+        Logger.log(f"start degrade_node(self, {node_id})")
+        if self.state.network_loaded:
+            self.network_manager.degrade_node(node_id)
+        else:
+            Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
+            raise StateTransitionError()
+        Logger.log(f"end degrade_node(self, {node_id})")
+
+    # UNDOES THE LAST NETWORK DEGRADATION IF STATE ALLOWS
+    def undo_degradation(self):
+        """
+        Undoes the last degradation applied to the network if the network is loaded.
+        
+        :raises StateTransitionError: If the network is not loaded.
+        """
+        
+        Logger.log(f"start undo_degradation(self)")
+        if self.state.network_loaded:
+            self.network_manager.undo_degradation()
+        else:
+            Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
+            raise StateTransitionError()
+        Logger.log(f"end undo_degradation(self)")
+
+    # REDOES THE LAST NETWORK DEGRADATION IF STATE ALLOWS
+    def redo_degradation(self):
+        """
+        Redoes the last degradation applied to the network if the network is loaded.
+        
+        :raises StateTransitionError: If the network is not loaded.
+        """
+        
+        Logger.log(f"start redo_degradation(self)")
+
+        if self.state.network_loaded:
+            self.network_manager.redo_degradation()
+        else:
+            Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
+            raise StateTransitionError()
+        Logger.log(f"end redo_degradation(self)")
+
+    # MODIFIES NETWORK PROPERTIES IF STATE ALLOWS
+    def modify_network_properties(self, network_properties):
+        """
+        Modifies the properties of the network if the network is loaded.
+        
+        :param network_properties: Dictionary containing network property modifications.
+        :raises StateTransitionError: If the network is not loaded.
+        """
+        
+        Logger.log(f"start modify_network_properties(self, {network_properties})")
+        if self.state.network_loaded:
+            self.network_manager.redo_degradation(network_properties)
+        else:
+            Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
+            raise StateTransitionError()
+        Logger.log(f"end modify_network_properties(self, {network_properties})")
+
+
+     # MODIFIES NETWORK PROPERTIES IF STATE ALLOWS
+    
+    # SETS DEGRADATION ENGINE STRATEGY
+    def set_degradation_engine_strategy(self, degradation_engine_strategy):
+        """
+        Sets degradation engine strategy of network manager. 
+        
+        :param degradation_engine_strategy: Concrete strategy instance of DegradationEngineStrategy
+        :raises StateTransitionError: If the network is not loaded.
+        """
+        
+        Logger.log(f"start set_degradation_engine_strategy(self, {degradation_engine_strategy})")
+        self.network_manager.set_degradation_engine_strategy(degradation_engine_strategy)
+        Logger.log(f"end set_degradation_engine_strategy(self, {degradation_engine_strategy})")
 
     # EXPORTS DATA IF NETWORK IS LOADED AND MODIFIED
     def export_data(self, export_request):
@@ -93,19 +175,17 @@ class SystemControllerInterface:
             raise StateTransitionError()
         Logger.log(f"end export_data(self, export_request)")
 
-
     # SUBMITS A VIEW REQUEST TO THE VIEW MANAGER
-    def submit_view_request(self, view_request):
+    def initiate_view(self, view):
         """
          Submits a view request to the view manager.
         
-        :param view_request: Type of view requested (e.g., CLI, etc.).
+        :param view: Type of view requested (e.g., CLI, etc.).
         """
         
-        Logger.log(f"start submit_view_request(self, {view_request})")
-        self.view_manager.handle_view_request(view_request, self)
-        Logger.log(f"end submit_view_request(self, view_request)")
-
+        Logger.log(f"start initiate_view(self, {view})")
+        self.view_manager.initiate_view_strategy(view, self)
+        Logger.log(f"end initiate_view(self, view)")
 
     # CONFIGURES Logger BASED ON PROVIDED SETTINGS
     def configure_Logger(self, enabled, **kwargs):
