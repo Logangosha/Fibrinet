@@ -1,0 +1,12 @@
+{
+    "name": "Python Development",
+    "image": "mcr.microsoft.com/vscode/devcontainers/python:3.9",
+    "extensions": [
+      "ms-python.python",
+      "ms-vscode.cpptools"
+    ],
+    "settings": {
+      "python.pythonPath": "/usr/local/bin/python3"
+    },
+    "forwardPorts": [8000]
+  }  
