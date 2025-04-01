@@ -1,400 +1,628 @@
-LOG FLUSHED: 2025-03-11 15:36:45.445153
-[2025-03-11 15:36:45] [DEBUG] Logger initialized with default file storage at C:\Users\Logan\Documents\GitHub\Webslinger\utils\logger\..\..\utils\logs.txt.
-[2025-03-11 15:36:45] [DEBUG] start SystemControllerInterface__init__(self)
-[2025-03-11 15:36:45] [DEBUG] start InputManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] start DataInterpreter __init__(self)
-[2025-03-11 15:36:45] [DEBUG] end DataInterpreter __init__(self)
-[2025-03-11 15:36:45] [DEBUG] end InputManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] start ViewManager __init__(self, <src.controllers.system_controller.SystemControllerInterface object at 0x000002A9FF933230>)
-[2025-03-11 15:36:45] [DEBUG] start ViewRequestInterpreter __init__(self)
-[2025-03-11 15:36:45] [DEBUG] ViewRequestInterpreter initialized.
-[2025-03-11 15:36:45] [DEBUG] end ViewRequestInterpreter __init__(self)
-[2025-03-11 15:36:45] [DEBUG] end ViewManager __init__(self, controller)
-[2025-03-11 15:36:45] [DEBUG] start ExportManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] end ExportManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] start NetworkManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] start NetworkStateManager__init__
-[2025-03-11 15:36:45] [DEBUG] end NetworkStateManager__init__
-[2025-03-11 15:36:45] [DEBUG] start DegradationEngineStrategy__init__(self)
-[2025-03-11 15:36:45] [DEBUG] end DegradationEngineStrategy__init__(self)
-[2025-03-11 15:36:45] [DEBUG] end NetworkManager __init__(self)
-[2025-03-11 15:36:45] [DEBUG] SystemControllerInterface initialized.
-[2025-03-11 15:36:45] [DEBUG] Submiting default cli view request
-[2025-03-11 15:36:45] [DEBUG] start initiate_view(self, cli)
-[2025-03-11 15:36:45] [DEBUG] start initiate_view_strategy(self, cli, controller)
-[2025-03-11 15:36:45] [DEBUG] start get_view_strategy(self, cli, <src.controllers.system_controller.SystemControllerInterface object at 0x000002A9FF933230>)
-[2025-03-11 15:36:45] [DEBUG] CLI view strategy selected.
-[2025-03-11 15:36:45] [DEBUG] end get_view_strategy(self, view_request, controller)
-[2025-03-11 15:36:45] [DEBUG] Selected view strategy: <src.views.cli_view.cli_view.CommandLineView object at 0x000002A9820BE0C0>
-[2025-03-11 15:36:45] [DEBUG] Starting new view strategy.
-[2025-03-11 15:36:45] [DEBUG] start start_view()
-[2025-03-11 15:36:45] [DEBUG] start clear_view()
-[2025-03-11 15:36:45] [DEBUG] end clear_view()
-[2025-03-11 15:36:45] [DEBUG] start run()
-[2025-03-11 15:36:45] [DEBUG] Propting user for command.
-[2025-03-11 15:36:46] [DEBUG] start clear_view()
-[2025-03-11 15:36:46] [DEBUG] end clear_view()
-[2025-03-11 15:36:46] [DEBUG] Command entered: initiate_view tkinter
-[2025-03-11 15:36:46] [DEBUG] Submitting view request for: tkinter
-[2025-03-11 15:36:46] [DEBUG] start initiate_view(self, tkinter)
-[2025-03-11 15:36:46] [DEBUG] start initiate_view_strategy(self, tkinter, controller)
-[2025-03-11 15:36:46] [DEBUG] start get_view_strategy(self, tkinter, <src.controllers.system_controller.SystemControllerInterface object at 0x000002A9FF933230>)
-[2025-03-11 15:36:46] [DEBUG] Tkinter view strategy selected.
-[2025-03-11 15:36:46] [DEBUG] end get_view_strategy(self, view_request, controller)
-[2025-03-11 15:36:46] [DEBUG] start TkinterView __init__(self, controller)
-[2025-03-11 15:36:46] [DEBUG] start __init__(self, <src.views.tkinter_view.tkinter_view.TkinterView object at 0x000002A9FFAF3680>)
-[2025-03-11 15:36:46] [DEBUG] end __init__(self, view)
-[2025-03-11 15:36:46] [DEBUG] start ConfirmPage__init__(self,view)
-[2025-03-11 15:36:46] [DEBUG] end ConfirmPage__init__(self,view)
-[2025-03-11 15:36:46] [DEBUG] start ModifyPage.__init__(self, view)
-[2025-03-11 15:36:46] [DEBUG] CanvasManager initialized
-[2025-03-11 15:36:46] [DEBUG] start ToolbarManager__init__(self, modify_page)
-[2025-03-11 15:36:46] [DEBUG] end ToolbarManager__init__(self, modify_page)
-[2025-03-11 15:36:46] [DEBUG] end ModifyPage.__init__(self, view)
-[2025-03-11 15:36:46] [DEBUG] end TkinterView __init__(self, controller)
-[2025-03-11 15:36:46] [DEBUG] Selected view strategy: <src.views.tkinter_view.tkinter_view.TkinterView object at 0x000002A9FFAF3680>
-[2025-03-11 15:36:46] [DEBUG] Stopping current view strategy before switching.
-[2025-03-11 15:36:46] [DEBUG] start stop_view()
-[2025-03-11 15:36:46] [DEBUG] end stop_view()
-[2025-03-11 15:36:46] [DEBUG] Starting new view strategy.
-[2025-03-11 15:36:46] [DEBUG] start start_view(self)
-[2025-03-11 15:36:46] [DEBUG] start show_page(self, input)
-[2025-03-11 15:36:46] [DEBUG] start clear_body(self)
-[2025-03-11 15:36:46] [DEBUG] end clear_body(self)
-[2025-03-11 15:36:46] [DEBUG] start show_page(self, .!frame)
-[2025-03-11 15:36:46] [DEBUG] end show_page(self, container)
-[2025-03-11 15:36:46] [DEBUG] end show_page(self, page_name)
-[2025-03-11 15:36:48] [DEBUG] start on_upload_file_icon_button_click
-[2025-03-11 15:36:57] [DEBUG] File selected: C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx
-[2025-03-11 15:36:57] [DEBUG] start show_page(self, confirm)
-[2025-03-11 15:36:57] [DEBUG] start clear_body(self)
-[2025-03-11 15:36:57] [DEBUG] end clear_body(self)
-[2025-03-11 15:36:57] [DEBUG] start show_page(self, container)
-[2025-03-11 15:36:57] [DEBUG] end show_page(self, container)
-[2025-03-11 15:36:57] [DEBUG] end show_page(self, page_name)
-[2025-03-11 15:36:57] [DEBUG] end on_upload_file_icon_button_click
-[2025-03-11 15:36:58] [DEBUG] start on_confirm_file(self)
-[2025-03-11 15:36:58] [DEBUG] start input_network(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
-[2025-03-11 15:36:58] [DEBUG] Setting network from input_manager network
-[2025-03-11 15:36:58] [DEBUG] start get_network __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
-[2025-03-11 15:36:58] [DEBUG] start get_data_processing_strategy __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
-[2025-03-11 15:36:58] [DEBUG] File details - Name: TriangleNetworkData.xlsx, Size: 9541 bytes, Extension: .xlsx
-[2025-03-11 15:36:58] [DEBUG] This is an Excel file.
-[2025-03-11 15:36:58] [DEBUG] end DataInterpreter __init__(self, input_data)
-[2025-03-11 15:36:58] [DEBUG] start ExcelDataStrategy __init__(self)
-[2025-03-11 15:36:58] [DEBUG] end ExcelDataStrategy __init__(self)
-[2025-03-11 15:36:58] [DEBUG] end get_network __init__(self, input_data)
-[2025-03-11 15:36:58] [DEBUG] start Process __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
-[2025-03-11 15:36:58] [DEBUG] start Network __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NetworkProperties __init__(self, {'NODES': {'N_ID': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 'N_X': [10, 15, 20, 15, 10, 5, 25, 30, 25, 20, 10, 5], 'N_Y': [5, 5, 10, 15, 15, 10, 5, 10, 15, 20, 20, 15]}, 'EDGES': {'E_ID': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 'N_FROM': [1, 2, 3, 4, 5, 3, 7, 8, 9, 9, 10, 5, 11, 12, 6, 2, 8, 10, 11, 12], 'N_TO': [2, 3, 4, 5, 6, 7, 8, 9, 4, 10, 5, 11, 12, 6, 1, 7, 3, 4, 5, 1]}, 'META_NETWORK_PROPERTIES': {'META_NET_PROP': ['network_size', 'total_tension', 'type'], 'META_NET_PROP_VALUE': ['100x100', 1400, 'static']}})
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 1, 'N_X': 10, 'N_Y': 5})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=1
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=10
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=5
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 2, 'N_X': 15, 'N_Y': 5})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=2
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=15
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=5
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 3, 'N_X': 20, 'N_Y': 10})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=3
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=20
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=10
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 4, 'N_X': 15, 'N_Y': 15})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=4
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=15
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=15
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 5, 'N_X': 10, 'N_Y': 15})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=5
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=10
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=15
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 6, 'N_X': 5, 'N_Y': 10})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=6
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=5
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=10
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 7, 'N_X': 25, 'N_Y': 5})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=7
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=25
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=5
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 8, 'N_X': 30, 'N_Y': 10})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=8
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=30
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=10
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 9, 'N_X': 25, 'N_Y': 15})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=9
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=25
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=15
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 10, 'N_X': 20, 'N_Y': 20})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=10
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=20
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=20
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 11, 'N_X': 10, 'N_Y': 20})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=11
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=10
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=20
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start NodeProperties __init__(self, {'N_ID': 12, 'N_X': 5, 'N_Y': 15})
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_ID=12
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_X=5
-[2025-03-11 15:36:58] [DEBUG] NodeProperties attribute added N_Y=15
-[2025-03-11 15:36:58] [DEBUG] end NodeProperties __init__(self, node_data)
-[2025-03-11 15:36:58] [DEBUG] end Node __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 1, 'N_FROM': 1, 'N_TO': 2})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=1
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=1
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=2
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 2, 'N_FROM': 2, 'N_TO': 3})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=2
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=2
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=3
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 3, 'N_FROM': 3, 'N_TO': 4})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=3
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=3
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=4
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 4, 'N_FROM': 4, 'N_TO': 5})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=4
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=4
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=5
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 5, 'N_FROM': 5, 'N_TO': 6})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=5
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=5
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=6
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 6, 'N_FROM': 3, 'N_TO': 7})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=6
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=3
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=7
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 7, 'N_FROM': 7, 'N_TO': 8})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=7
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=7
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=8
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 8, 'N_FROM': 8, 'N_TO': 9})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=8
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=8
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=9
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 9, 'N_FROM': 9, 'N_TO': 4})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=9
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=9
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=4
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 10, 'N_FROM': 9, 'N_TO': 10})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=10
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=9
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=10
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 11, 'N_FROM': 10, 'N_TO': 5})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=11
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=10
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=5
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 12, 'N_FROM': 5, 'N_TO': 11})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=12
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=5
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=11
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 13, 'N_FROM': 11, 'N_TO': 12})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=13
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=11
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=12
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 14, 'N_FROM': 12, 'N_TO': 6})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=14
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=12
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=6
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 15, 'N_FROM': 6, 'N_TO': 1})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=15
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=6
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=1
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 16, 'N_FROM': 2, 'N_TO': 7})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=16
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=2
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=7
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 17, 'N_FROM': 8, 'N_TO': 3})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=17
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=8
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=3
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 18, 'N_FROM': 10, 'N_TO': 4})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=18
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=10
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=4
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 19, 'N_FROM': 11, 'N_TO': 5})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=19
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=11
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=5
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] start EdgeProperties __init__(self, {'E_ID': 20, 'N_FROM': 12, 'N_TO': 1})
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added E_ID=20
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_FROM=12
-[2025-03-11 15:36:58] [DEBUG] EdgeProperty attribute added N_TO=1
-[2025-03-11 15:36:58] [DEBUG] end EdgeProperties __init__(self, edge_data)
-[2025-03-11 15:36:58] [DEBUG] end Edge __init__(self)
-[2025-03-11 15:36:58] [DEBUG] Adding META_NETWORK_PROPERTY network_size: 100x100
-[2025-03-11 15:36:58] [DEBUG] Adding META_NETWORK_PROPERTY total_tension: 1400
-[2025-03-11 15:36:58] [DEBUG] Adding META_NETWORK_PROPERTY type: static
-[2025-03-11 15:36:58] [DEBUG] end NetworkProperties __init__(self, **kwargs)
-[2025-03-11 15:36:58] [DEBUG] ===== Network Properties =====
-[2025-03-11 15:36:58] [DEBUG] Nodes:
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 1, 'N_X': 10, 'N_Y': 5}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 2, 'N_X': 15, 'N_Y': 5}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 3, 'N_X': 20, 'N_Y': 10}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 4, 'N_X': 15, 'N_Y': 15}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 5, 'N_X': 10, 'N_Y': 15}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 6, 'N_X': 5, 'N_Y': 10}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 7, 'N_X': 25, 'N_Y': 5}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 8, 'N_X': 30, 'N_Y': 10}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 9, 'N_X': 25, 'N_Y': 15}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 10, 'N_X': 20, 'N_Y': 20}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 11, 'N_X': 10, 'N_Y': 20}
-[2025-03-11 15:36:58] [DEBUG] {'N_ID': 12, 'N_X': 5, 'N_Y': 15}
-[2025-03-11 15:36:58] [DEBUG] Edges:
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 1, 'N_FROM': 1, 'N_TO': 2}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 2, 'N_FROM': 2, 'N_TO': 3}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 3, 'N_FROM': 3, 'N_TO': 4}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 4, 'N_FROM': 4, 'N_TO': 5}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 5, 'N_FROM': 5, 'N_TO': 6}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 6, 'N_FROM': 3, 'N_TO': 7}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 7, 'N_FROM': 7, 'N_TO': 8}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 8, 'N_FROM': 8, 'N_TO': 9}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 9, 'N_FROM': 9, 'N_TO': 4}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 10, 'N_FROM': 9, 'N_TO': 10}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 11, 'N_FROM': 10, 'N_TO': 5}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 12, 'N_FROM': 5, 'N_TO': 11}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 13, 'N_FROM': 11, 'N_TO': 12}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 14, 'N_FROM': 12, 'N_TO': 6}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 15, 'N_FROM': 6, 'N_TO': 1}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 16, 'N_FROM': 2, 'N_TO': 7}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 17, 'N_FROM': 8, 'N_TO': 3}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 18, 'N_FROM': 10, 'N_TO': 4}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 19, 'N_FROM': 11, 'N_TO': 5}
-[2025-03-11 15:36:58] [DEBUG] {'E_ID': 20, 'N_FROM': 12, 'N_TO': 1}
-[2025-03-11 15:36:58] [DEBUG] Meta Properties:
-[2025-03-11 15:36:58] [DEBUG] network_size: 100x100
-[2025-03-11 15:36:58] [DEBUG] total_tension: 1400
-[2025-03-11 15:36:58] [DEBUG] type: static
-[2025-03-11 15:36:58] [DEBUG] ==============================
-[2025-03-11 15:36:58] [DEBUG] end Network __init__(self)
-[2025-03-11 15:36:58] [DEBUG] end Process __init__(self, input_data)
-[2025-03-11 15:36:58] [DEBUG] start set_network(self, <src.managers.network.network.Network object at 0x000002A983998110>)
-[2025-03-11 15:36:58] [DEBUG] end set_network_(self, network)
-[2025-03-11 15:36:58] [DEBUG] start add_new_state(<src.managers.network.network.Network object at 0x000002A983998110>)
-[2025-03-11 15:36:58] [DEBUG] end add_new_state
-[2025-03-11 15:36:58] [DEBUG] Is a network loaded? True
-[2025-03-11 15:36:58] [DEBUG] Setting system state to network loaded true
-[2025-03-11 15:36:58] [DEBUG] end input_network(self, input_data)
-[2025-03-11 15:36:58] [DEBUG] File confirmed: C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx
-[2025-03-11 15:36:58] [DEBUG] start show_page(self, modify)
-[2025-03-11 15:36:58] [DEBUG] start clear_body(self)
-[2025-03-11 15:36:58] [DEBUG] end clear_body(self)
-[2025-03-11 15:36:58] [DEBUG] start show_page(self, container)
-[2025-03-11 15:36:58] [DEBUG] Setting up the canvas...
-[2025-03-11 15:36:58] [DEBUG] Canvas setup completed
-[2025-03-11 15:36:58] [DEBUG] start set_network(self)
-[2025-03-11 15:36:58] [DEBUG] end set_network_(self, network)
-[2025-03-11 15:36:58] [DEBUG] Drawing network...
-[2025-03-11 15:36:58] [DEBUG] Clearing canvas...
-[2025-03-11 15:36:58] [DEBUG] start setup_toolbar(self, container)
-[2025-03-11 15:36:58] [DEBUG] start setup_action_bar(self)
-[2025-03-11 15:36:58] [DEBUG] start add_action_bar_buttons(self)
-[2025-03-11 15:36:58] [DEBUG] end add_action_bar_buttons(self)
-[2025-03-11 15:36:58] [DEBUG] end setup_action_bar(self)
-[2025-03-11 15:36:58] [DEBUG] start setup_info_bar(self)
-[2025-03-11 15:36:58] [DEBUG] end setup_info_bar(self)
-[2025-03-11 15:36:58] [DEBUG] end setup_toolbar(self, container)
-[2025-03-11 15:36:58] [DEBUG] end show_page(self, container)
-[2025-03-11 15:36:58] [DEBUG] end show_page(self, page_name)
-[2025-03-11 15:36:58] [DEBUG] end on_confirm_file(self)
-[2025-03-11 15:36:58] [DEBUG] start update_toolbar_sizes(self, event)
-[2025-03-11 15:36:58] [DEBUG] end update_toolbar_sizes(self, event)
-[2025-03-11 15:36:58] [DEBUG] Drawing network...
-[2025-03-11 15:36:58] [DEBUG] Clearing canvas...
-[2025-03-11 15:47:58] [DEBUG] end start_view(self)
-[2025-03-11 15:47:58] [DEBUG] end initiate_view_strategy(self, view, controller)
-[2025-03-11 15:47:58] [DEBUG] end initiate_view(self, view)
-[2025-03-11 15:47:58] [DEBUG] end run()
-[2025-03-11 15:47:58] [DEBUG] end start_view()
-[2025-03-11 15:47:58] [DEBUG] end initiate_view_strategy(self, view, controller)
-[2025-03-11 15:47:58] [DEBUG] end initiate_view(self, view)
-[2025-03-11 15:47:58] [DEBUG] end SystemControllerInterface__init__(self)
+LOG FLUSHED: 2025-04-01 09:16:18.246413
+[2025-04-01 09:16:18] [DEBUG] Logger initialized with default file storage at C:\Users\Logan\Documents\GitHub\Webslinger\utils\logger\..\..\utils\logs.txt.
+[2025-04-01 09:16:18] [DEBUG] start SystemControllerInterface__init__(self)
+[2025-04-01 09:16:18] [DEBUG] start InputManager __init__(self)
+[2025-04-01 09:16:18] [DEBUG] start DataInterpreter __init__(self)
+[2025-04-01 09:16:18] [DEBUG] end DataInterpreter __init__(self)
+[2025-04-01 09:16:18] [DEBUG] end InputManager __init__(self)
+[2025-04-01 09:16:18] [DEBUG] start ViewManager __init__(self, <src.controllers.system_controller.SystemControllerInterface object at 0x00000233FF9A7D70>)
+[2025-04-01 09:16:18] [DEBUG] start ViewRequestInterpreter __init__(self)
+[2025-04-01 09:16:18] [DEBUG] ViewRequestInterpreter initialized.
+[2025-04-01 09:16:18] [DEBUG] end ViewRequestInterpreter __init__(self)
+[2025-04-01 09:16:18] [DEBUG] end ViewManager __init__(self, controller)
+[2025-04-01 09:16:18] [DEBUG] start NetworkManager __init__(self)
+[2025-04-01 09:16:18] [DEBUG] start NetworkStateManager__init__
+[2025-04-01 09:16:18] [DEBUG] end NetworkStateManager__init__
+[2025-04-01 09:16:18] [DEBUG] start DegradationEngineStrategy__init__(self)
+[2025-04-01 09:16:18] [DEBUG] end DegradationEngineStrategy__init__(self)
+[2025-04-01 09:16:18] [DEBUG] end NetworkManager __init__(self)
+[2025-04-01 09:16:18] [DEBUG] SystemControllerInterface initialized.
+[2025-04-01 09:16:18] [DEBUG] end SystemControllerInterface__init__(self)
+[2025-04-01 09:16:18] [DEBUG] start initiate_view(self, tkinter)
+[2025-04-01 09:16:18] [DEBUG] start initiate_view_strategy(self, tkinter, controller)
+[2025-04-01 09:16:18] [DEBUG] start get_view_strategy(self, tkinter, <src.controllers.system_controller.SystemControllerInterface object at 0x00000233FF9A7D70>)
+[2025-04-01 09:16:18] [DEBUG] Tkinter view strategy selected.
+[2025-04-01 09:16:18] [DEBUG] end get_view_strategy(self, view_request, controller)
+[2025-04-01 09:16:18] [DEBUG] start TkinterView __init__(self, controller)
+[2025-04-01 09:16:18] [DEBUG] start __init__(self, <src.views.tkinter_view.tkinter_view.TkinterView object at 0x000002339A53BDD0>)
+[2025-04-01 09:16:18] [DEBUG] end __init__(self, view)
+[2025-04-01 09:16:18] [DEBUG] start ConfirmPage__init__(self,view)
+[2025-04-01 09:16:18] [DEBUG] end ConfirmPage__init__(self,view)
+[2025-04-01 09:16:18] [DEBUG] start ExportConfirmPage__init__(self, view)
+[2025-04-01 09:16:18] [DEBUG] end ExportConfirmPage__init__(self, view)
+[2025-04-01 09:16:18] [DEBUG] start ModifyPage.__init__(self, view)
+[2025-04-01 09:16:18] [DEBUG] CanvasManager initialized
+[2025-04-01 09:16:18] [DEBUG] start ToolbarManager__init__(self, modify_page)
+[2025-04-01 09:16:18] [DEBUG] end ToolbarManager__init__(self, modify_page)
+[2025-04-01 09:16:18] [DEBUG] end ModifyPage.__init__(self, view)
+[2025-04-01 09:16:18] [DEBUG] end TkinterView __init__(self, controller)
+[2025-04-01 09:16:18] [DEBUG] Selected view strategy: <src.views.tkinter_view.tkinter_view.TkinterView object at 0x000002339A53BDD0>
+[2025-04-01 09:16:18] [DEBUG] Starting new view strategy.
+[2025-04-01 09:16:18] [DEBUG] start start_view(self)
+[2025-04-01 09:16:18] [DEBUG] start show_page(self, input)
+[2025-04-01 09:16:18] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:18] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:18] [DEBUG] start show_page(self, .!frame)
+[2025-04-01 09:16:18] [DEBUG] end show_page(self, container)
+[2025-04-01 09:16:18] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:19] [DEBUG] start on_upload_file_icon_button_click
+[2025-04-01 09:16:26] [DEBUG] File selected: C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx
+[2025-04-01 09:16:26] [DEBUG] start show_page(self, input_confirm)
+[2025-04-01 09:16:26] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] start show_page(self, container)
+[2025-04-01 09:16:26] [DEBUG] end show_page(self, container)
+[2025-04-01 09:16:26] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:26] [DEBUG] end on_upload_file_icon_button_click
+[2025-04-01 09:16:26] [DEBUG] start show_page(self, loading)
+[2025-04-01 09:16:26] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:26] [DEBUG] start on_confirm_file(self)
+[2025-04-01 09:16:26] [DEBUG] start input_network(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
+[2025-04-01 09:16:26] [DEBUG] Setting network from input_manager network
+[2025-04-01 09:16:26] [DEBUG] start reset_network_state(self)
+[2025-04-01 09:16:26] [DEBUG] start reset_network_state()
+[2025-04-01 09:16:26] [DEBUG] end reset_network_state()
+[2025-04-01 09:16:26] [DEBUG] end reset_network_state(self)
+[2025-04-01 09:16:26] [DEBUG] start get_network __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
+[2025-04-01 09:16:26] [DEBUG] start get_data_processing_strategy __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
+[2025-04-01 09:16:26] [DEBUG] File details - Name: TriangleNetworkData.xlsx, Size: 9539 bytes, Extension: .xlsx
+[2025-04-01 09:16:26] [DEBUG] This is an Excel file.
+[2025-04-01 09:16:26] [DEBUG] end DataInterpreter __init__(self, input_data)
+[2025-04-01 09:16:26] [DEBUG] start ExcelDataStrategy __init__(self)
+[2025-04-01 09:16:26] [DEBUG] end ExcelDataStrategy __init__(self)
+[2025-04-01 09:16:26] [DEBUG] end get_network __init__(self, input_data)
+[2025-04-01 09:16:26] [DEBUG] start Process __init__(self, C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx)
+[2025-04-01 09:16:26] [DEBUG] start create_network(self, {'nodes': {'n_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 'n_x': [10, 15, 20, 15, 10, 5, 25, 30, 25, 20, 10, 5], 'n_y': [5, 5, 10, 15, 15, 10, 5, 10, 15, 20, 20, 15]}, 'edges': {'e_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 'n_from': [1, 2, 3, 4, 5, 3, 7, 8, 9, 9, 10, 5, 11, 12, 6, 2, 8, 10, 11, 12], 'n_to': [2, 3, 4, 5, 6, 7, 8, 9, 4, 10, 5, 11, 12, 6, 1, 7, 3, 4, 5, 1]}, 'meta_data': {'network_size': '100x100', 'total_tension': 1400, 'type': 'static'}})
+[2025-04-01 09:16:26] [DEBUG] start _matches_schema(self, {'nodes': {'n_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], 'n_x': [10, 15, 20, 15, 10, 5, 25, 30, 25, 20, 10, 5], 'n_y': [5, 5, 10, 15, 15, 10, 5, 10, 15, 20, 20, 15]}, 'edges': {'e_id': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20], 'n_from': [1, 2, 3, 4, 5, 3, 7, 8, 9, 9, 10, 5, 11, 12, 6, 2, 8, 10, 11, 12], 'n_to': [2, 3, 4, 5, 6, 7, 8, 9, 4, 10, 5, 11, 12, 6, 1, 7, 3, 4, 5, 1]}, 'meta_data': {'network_size': '100x100', 'total_tension': 1400, 'type': 'static'}})
+[2025-04-01 09:16:26] [DEBUG] Checking meta_data...
+[2025-04-01 09:16:26] [DEBUG] meta_data: Attribute 'network_size' found.
+[2025-04-01 09:16:26] [DEBUG] meta_data: Attribute 'total_tension' found.
+[2025-04-01 09:16:26] [DEBUG] meta_data: Attribute 'type' found.
+[2025-04-01 09:16:26] [DEBUG] meta_data check complete.
+[2025-04-01 09:16:26] [DEBUG] Checking nodes...
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 1, 'n_x': 10, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 1, 'n_x': 10, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 1, 'n_x': 10, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 2, 'n_x': 15, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 2, 'n_x': 15, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 2, 'n_x': 15, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 3, 'n_x': 20, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 3, 'n_x': 20, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 3, 'n_x': 20, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 4, 'n_x': 15, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 4, 'n_x': 15, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 4, 'n_x': 15, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 5, 'n_x': 10, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 5, 'n_x': 10, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 5, 'n_x': 10, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 6, 'n_x': 5, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 6, 'n_x': 5, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 6, 'n_x': 5, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 7, 'n_x': 25, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 7, 'n_x': 25, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 7, 'n_x': 25, 'n_y': 5}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 8, 'n_x': 30, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 8, 'n_x': 30, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 8, 'n_x': 30, 'n_y': 10}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 9, 'n_x': 25, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 9, 'n_x': 25, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 9, 'n_x': 25, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 10, 'n_x': 20, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 10, 'n_x': 20, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 10, 'n_x': 20, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 11, 'n_x': 10, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 11, 'n_x': 10, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 11, 'n_x': 10, 'n_y': 20}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_id' found in node {'n_id': 12, 'n_x': 5, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_x' found in node {'n_id': 12, 'n_x': 5, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes: Attribute 'n_y' found in node {'n_id': 12, 'n_x': 5, 'n_y': 15}.
+[2025-04-01 09:16:26] [DEBUG] nodes check complete.
+[2025-04-01 09:16:26] [DEBUG] Checking edges...
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 1, 'n_from': 1, 'n_to': 2}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 1, 'n_from': 1, 'n_to': 2}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 1, 'n_from': 1, 'n_to': 2}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 2, 'n_from': 2, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 2, 'n_from': 2, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 2, 'n_from': 2, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 3, 'n_from': 3, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 3, 'n_from': 3, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 3, 'n_from': 3, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 4, 'n_from': 4, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 4, 'n_from': 4, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 4, 'n_from': 4, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 5, 'n_from': 5, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 5, 'n_from': 5, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 5, 'n_from': 5, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 6, 'n_from': 3, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 6, 'n_from': 3, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 6, 'n_from': 3, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 7, 'n_from': 7, 'n_to': 8}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 7, 'n_from': 7, 'n_to': 8}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 7, 'n_from': 7, 'n_to': 8}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 8, 'n_from': 8, 'n_to': 9}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 8, 'n_from': 8, 'n_to': 9}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 8, 'n_from': 8, 'n_to': 9}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 9, 'n_from': 9, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 9, 'n_from': 9, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 9, 'n_from': 9, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 10, 'n_from': 9, 'n_to': 10}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 10, 'n_from': 9, 'n_to': 10}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 10, 'n_from': 9, 'n_to': 10}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 11, 'n_from': 10, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 11, 'n_from': 10, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 11, 'n_from': 10, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 12, 'n_from': 5, 'n_to': 11}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 12, 'n_from': 5, 'n_to': 11}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 12, 'n_from': 5, 'n_to': 11}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 13, 'n_from': 11, 'n_to': 12}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 13, 'n_from': 11, 'n_to': 12}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 13, 'n_from': 11, 'n_to': 12}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 14, 'n_from': 12, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 14, 'n_from': 12, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 14, 'n_from': 12, 'n_to': 6}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 15, 'n_from': 6, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 15, 'n_from': 6, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 15, 'n_from': 6, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 16, 'n_from': 2, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 16, 'n_from': 2, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 16, 'n_from': 2, 'n_to': 7}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 17, 'n_from': 8, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 17, 'n_from': 8, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 17, 'n_from': 8, 'n_to': 3}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 18, 'n_from': 10, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 18, 'n_from': 10, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 18, 'n_from': 10, 'n_to': 4}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 19, 'n_from': 11, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 19, 'n_from': 11, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 19, 'n_from': 11, 'n_to': 5}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_from' found in edge {'e_id': 20, 'n_from': 12, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'n_to' found in edge {'e_id': 20, 'n_from': 12, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges: Attribute 'e_id' found in edge {'e_id': 20, 'n_from': 12, 'n_to': 1}.
+[2025-04-01 09:16:26] [DEBUG] edges check complete.
+[2025-04-01 09:16:26] [DEBUG] Schema matching successful.
+[2025-04-01 09:16:26] [DEBUG] end _matches_schema(self, data)
+[2025-04-01 09:16:26] [DEBUG] Found matching network type '2D'
+[2025-04-01 09:16:26] [DEBUG] Processing node data...
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=1
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=10
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=5
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=2
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=15
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=5
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=3
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=20
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=10
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=4
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=15
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=15
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=5
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=10
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=15
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=6
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=5
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=10
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=7
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=25
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=5
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=8
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=30
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=10
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=9
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=25
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=15
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=10
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=20
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=20
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=11
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=10
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=20
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_id=12
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_x=5
+[2025-04-01 09:16:26] [DEBUG] Node attribute added n_y=15
+[2025-04-01 09:16:26] [DEBUG] end Node __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Processing edge data...
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=1
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=1
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=2
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=2
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=2
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=3
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=3
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=3
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=4
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=4
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=4
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=5
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=5
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=5
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=6
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=6
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=3
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=7
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=7
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=7
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=8
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=8
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=8
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=9
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=9
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=9
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=4
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=10
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=9
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=10
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=11
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=10
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=5
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=12
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=5
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=11
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=13
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=11
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=12
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=14
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=12
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=6
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=15
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=6
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=1
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=16
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=2
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=7
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=17
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=8
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=3
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=18
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=10
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=4
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=19
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=11
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=5
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added e_id=20
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_from=12
+[2025-04-01 09:16:26] [DEBUG] Edge attribute added n_to=1
+[2025-04-01 09:16:26] [DEBUG] start validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end validate_attributes(self)
+[2025-04-01 09:16:26] [DEBUG] end Edge __init__(self)
+[2025-04-01 09:16:26] [DEBUG] start Network2D __init__(self, {'nodes': [<src.managers.network.nodes.node_2d.Node2D object at 0x0000023397C867B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D546C30>, <src.managers.network.nodes.node_2d.Node2D object at 0x00000233980106B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339922CEF0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D61A150>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339A93D370>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F08C0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0950>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0AA0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F2300>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2DB0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2120>], 'edges': [<src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E29F0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0AD0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1760>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E19D0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3800>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0080>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0D10>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E2C30>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1A90>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1FA0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E37A0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E15B0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1070>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D4EBA70>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C2420>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1910>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D40BBC0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9812B0>], 'meta_data': {'network_size': '100x100', 'total_tension': 1400, 'type': 'static'}})
+[2025-04-01 09:16:26] [DEBUG] start BaseNetwork __init__(self, [<src.managers.network.nodes.node_2d.Node2D object at 0x0000023397C867B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D546C30>, <src.managers.network.nodes.node_2d.Node2D object at 0x00000233980106B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339922CEF0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D61A150>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339A93D370>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F08C0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0950>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0AA0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F2300>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2DB0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2120>], [<src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E29F0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0AD0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1760>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E19D0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3800>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0080>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0D10>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E2C30>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1A90>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1FA0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E37A0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E15B0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1070>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D4EBA70>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C2420>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1910>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D40BBC0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9812B0>], {'network_size': '100x100', 'total_tension': 1400, 'type': 'static'}, {'meta_data': ['network_size', 'total_tension', 'type'], 'node_attributes': {'n_id', 'n_x', 'n_y'}, 'edge_attributes': {'n_from', 'n_to', 'e_id'}})
+[2025-04-01 09:16:26] [DEBUG] ===== Network Properties =====
+[2025-04-01 09:16:26] [DEBUG] Nodes:
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 1, 'n_x': 10, 'n_y': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 2, 'n_x': 15, 'n_y': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 3, 'n_x': 20, 'n_y': 10}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 4, 'n_x': 15, 'n_y': 15}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 5, 'n_x': 10, 'n_y': 15}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 6, 'n_x': 5, 'n_y': 10}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 7, 'n_x': 25, 'n_y': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 8, 'n_x': 30, 'n_y': 10}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 9, 'n_x': 25, 'n_y': 15}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 10, 'n_x': 20, 'n_y': 20}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 11, 'n_x': 10, 'n_y': 20}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['n_id', 'n_x', 'n_y'], 'n_id': 12, 'n_x': 5, 'n_y': 15}
+[2025-04-01 09:16:26] [DEBUG] Edges:
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 1, 'n_from': 1, 'n_to': 2}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 2, 'n_from': 2, 'n_to': 3}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 3, 'n_from': 3, 'n_to': 4}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 4, 'n_from': 4, 'n_to': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 5, 'n_from': 5, 'n_to': 6}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 6, 'n_from': 3, 'n_to': 7}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 7, 'n_from': 7, 'n_to': 8}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 8, 'n_from': 8, 'n_to': 9}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 9, 'n_from': 9, 'n_to': 4}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 10, 'n_from': 9, 'n_to': 10}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 11, 'n_from': 10, 'n_to': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 12, 'n_from': 5, 'n_to': 11}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 13, 'n_from': 11, 'n_to': 12}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 14, 'n_from': 12, 'n_to': 6}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 15, 'n_from': 6, 'n_to': 1}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 16, 'n_from': 2, 'n_to': 7}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 17, 'n_from': 8, 'n_to': 3}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 18, 'n_from': 10, 'n_to': 4}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 19, 'n_from': 11, 'n_to': 5}
+[2025-04-01 09:16:26] [DEBUG] {'attributes': ['e_id', 'n_from', 'n_to'], 'e_id': 20, 'n_from': 12, 'n_to': 1}
+[2025-04-01 09:16:26] [DEBUG] Meta Properties:
+[2025-04-01 09:16:26] [DEBUG] network_size: 100x100
+[2025-04-01 09:16:26] [DEBUG] total_tension: 1400
+[2025-04-01 09:16:26] [DEBUG] type: static
+[2025-04-01 09:16:26] [DEBUG] ==============================
+[2025-04-01 09:16:26] [DEBUG] end BaseNetwork __init__(self, nodes, edges, meta_data, schema)
+[2025-04-01 09:16:26] [DEBUG] end Network2D __init__(self, {'nodes': [<src.managers.network.nodes.node_2d.Node2D object at 0x0000023397C867B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D546C30>, <src.managers.network.nodes.node_2d.Node2D object at 0x00000233980106B0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339922CEF0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D61A150>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339A93D370>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F08C0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0950>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F0AA0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3F2300>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2DB0>, <src.managers.network.nodes.node_2d.Node2D object at 0x000002339D3E2120>], 'edges': [<src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E29F0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0AD0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1760>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E19D0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E3800>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0080>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0D10>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E2C30>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1A90>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E0380>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E1FA0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E37A0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D3E15B0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1070>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D4EBA70>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C2420>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9C1910>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339D40BBC0>, <src.managers.network.edges.edge_2d.Edge2D object at 0x000002339A9812B0>], 'meta_data': {'network_size': '100x100', 'total_tension': 1400, 'type': 'static'}})
+[2025-04-01 09:16:26] [DEBUG] Network created successfully: <src.managers.network.networks.network_2d.Network2D object at 0x000002339A93D340>
+[2025-04-01 09:16:26] [DEBUG] start create_network(self, data)
+[2025-04-01 09:16:26] [DEBUG] end Process __init__(self, input_data)
+[2025-04-01 09:16:26] [DEBUG] start set_network(self, <src.managers.network.networks.network_2d.Network2D object at 0x000002339A93D340>)
+[2025-04-01 09:16:26] [DEBUG] end set_network_(self, network)
+[2025-04-01 09:16:26] [DEBUG] start add_new_state(<src.managers.network.networks.network_2d.Network2D object at 0x000002339A93D340>)
+[2025-04-01 09:16:26] [DEBUG] end add_new_state
+[2025-04-01 09:16:26] [DEBUG] Is a network loaded? True
+[2025-04-01 09:16:26] [DEBUG] Setting system state to network loaded true
+[2025-04-01 09:16:26] [DEBUG] end input_network(self, input_data)
+[2025-04-01 09:16:26] [DEBUG] File confirmed: C:/Users/Logan/Documents/GitHub/Webslinger/test/input_data/TriangleNetworkData.xlsx
+[2025-04-01 09:16:26] [DEBUG] start show_page(self, modify)
+[2025-04-01 09:16:26] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:26] [DEBUG] start show_page(self, container)
+[2025-04-01 09:16:26] [DEBUG] Setting up the canvas...
+[2025-04-01 09:16:26] [DEBUG] Canvas setup completed
+[2025-04-01 09:16:26] [DEBUG] start set_network(self)
+[2025-04-01 09:16:26] [DEBUG] end set_network_(self, network)
+[2025-04-01 09:16:26] [DEBUG] Drawing network...
+[2025-04-01 09:16:26] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:26] [DEBUG] start setup_toolbar(self, container)
+[2025-04-01 09:16:26] [DEBUG] start setup_action_bar(self)
+[2025-04-01 09:16:26] [DEBUG] Drawing network...
+[2025-04-01 09:16:26] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:26] [DEBUG] start add_action_bar_buttons(self)
+[2025-04-01 09:16:26] [DEBUG] end add_action_bar_buttons(self)
+[2025-04-01 09:16:26] [DEBUG] end setup_action_bar(self)
+[2025-04-01 09:16:26] [DEBUG] start setup_info_bar(self)
+[2025-04-01 09:16:26] [DEBUG] end setup_info_bar(self)
+[2025-04-01 09:16:26] [DEBUG] end setup_toolbar(self, container)
+[2025-04-01 09:16:26] [DEBUG] end show_page(self, container)
+[2025-04-01 09:16:26] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:26] [DEBUG] end on_confirm_file(self)
+[2025-04-01 09:16:28] [DEBUG] start element_selected(self, 3, node)
+[2025-04-01 09:16:28] [DEBUG] start update_info_bar(self, info)
+[2025-04-01 09:16:28] [DEBUG] start update_info_bar(self, Node 3 selected.)
+[2025-04-01 09:16:28] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:28] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:28] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:28] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:28] [DEBUG] end element_selected(self, element_id, element_type)
+[2025-04-01 09:16:28] [DEBUG] Element 55 selected
+[2025-04-01 09:16:29] [DEBUG] start on_remove_click(self)
+[2025-04-01 09:16:29] [DEBUG] start remove_selected_element(self)
+[2025-04-01 09:16:29] [DEBUG] Removing Node 3
+[2025-04-01 09:16:29] [DEBUG] start degrade_node(self, 3)
+[2025-04-01 09:16:29] [DEBUG] start degrade_node(self, 3)
+[2025-04-01 09:16:29] [DEBUG] start degrade_node(self, network, 3)
+[2025-04-01 09:16:29] [DEBUG] end degrade_node(self, network, 3)
+[2025-04-01 09:16:29] [DEBUG] start add_new_state(<src.managers.network.networks.network_2d.Network2D object at 0x000002339A93D1C0>)
+[2025-04-01 09:16:29] [DEBUG] end add_new_state
+[2025-04-01 09:16:29] [DEBUG] end degrade_node(self, node_id)
+[2025-04-01 09:16:29] [DEBUG] end degrade_node(self, 3)
+[2025-04-01 09:16:29] [DEBUG] Element 55 unhighlighted
+[2025-04-01 09:16:29] [DEBUG] Selected element cleared
+[2025-04-01 09:16:29] [DEBUG] start update_canvas(self)
+[2025-04-01 09:16:29] [DEBUG] start set_network(self)
+[2025-04-01 09:16:29] [DEBUG] end set_network_(self, network)
+[2025-04-01 09:16:29] [DEBUG] Drawing network...
+[2025-04-01 09:16:29] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:29] [DEBUG] end update_canvas(self)
+[2025-04-01 09:16:29] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] start disable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] button found
+[2025-04-01 09:16:29] [DEBUG] end disable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:29] [DEBUG] start update_info_bar(self, info)
+[2025-04-01 09:16:29] [DEBUG] start update_info_bar(self, Node 3 removed)
+[2025-04-01 09:16:29] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:29] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:29] [DEBUG] end remove_selected_element(self)
+[2025-04-01 09:16:29] [DEBUG] start update_info_bar(self, Element removed)
+[2025-04-01 09:16:29] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:29] [DEBUG] end on_remove_click(self)
+[2025-04-01 09:16:31] [DEBUG] start element_selected(self, 5, node)
+[2025-04-01 09:16:31] [DEBUG] start update_info_bar(self, info)
+[2025-04-01 09:16:31] [DEBUG] start update_info_bar(self, Node 5 selected.)
+[2025-04-01 09:16:31] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:31] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:31] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:31] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:31] [DEBUG] end element_selected(self, element_id, element_type)
+[2025-04-01 09:16:31] [DEBUG] Element 84 selected
+[2025-04-01 09:16:32] [DEBUG] start on_remove_click(self)
+[2025-04-01 09:16:32] [DEBUG] start remove_selected_element(self)
+[2025-04-01 09:16:32] [DEBUG] Removing Node 5
+[2025-04-01 09:16:32] [DEBUG] start degrade_node(self, 5)
+[2025-04-01 09:16:32] [DEBUG] start degrade_node(self, 5)
+[2025-04-01 09:16:32] [DEBUG] start degrade_node(self, network, 5)
+[2025-04-01 09:16:32] [DEBUG] end degrade_node(self, network, 5)
+[2025-04-01 09:16:32] [DEBUG] start add_new_state(<src.managers.network.networks.network_2d.Network2D object at 0x000002339D6535C0>)
+[2025-04-01 09:16:32] [DEBUG] end add_new_state
+[2025-04-01 09:16:32] [DEBUG] end degrade_node(self, node_id)
+[2025-04-01 09:16:32] [DEBUG] end degrade_node(self, 5)
+[2025-04-01 09:16:32] [DEBUG] Element 84 unhighlighted
+[2025-04-01 09:16:32] [DEBUG] Selected element cleared
+[2025-04-01 09:16:32] [DEBUG] start update_canvas(self)
+[2025-04-01 09:16:32] [DEBUG] start set_network(self)
+[2025-04-01 09:16:32] [DEBUG] end set_network_(self, network)
+[2025-04-01 09:16:32] [DEBUG] Drawing network...
+[2025-04-01 09:16:32] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:32] [DEBUG] end update_canvas(self)
+[2025-04-01 09:16:32] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] start disable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] button found
+[2025-04-01 09:16:32] [DEBUG] end disable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] start enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] end enable_action_bar_button(self, button_name)
+[2025-04-01 09:16:32] [DEBUG] start update_info_bar(self, info)
+[2025-04-01 09:16:32] [DEBUG] start update_info_bar(self, Node 5 removed)
+[2025-04-01 09:16:32] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:32] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:32] [DEBUG] end remove_selected_element(self)
+[2025-04-01 09:16:32] [DEBUG] start update_info_bar(self, Element removed)
+[2025-04-01 09:16:32] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:32] [DEBUG] end on_remove_click(self)
+[2025-04-01 09:16:33] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] Drawing network...
+[2025-04-01 09:16:33] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:33] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] Drawing network...
+[2025-04-01 09:16:33] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:33] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:33] [DEBUG] Drawing network...
+[2025-04-01 09:16:33] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:34] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] Drawing network...
+[2025-04-01 09:16:34] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:34] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] Drawing network...
+[2025-04-01 09:16:34] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:34] [DEBUG] start update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] end update_toolbar_sizes(self, event)
+[2025-04-01 09:16:34] [DEBUG] Drawing network...
+[2025-04-01 09:16:34] [DEBUG] Clearing canvas...
+[2025-04-01 09:16:36] [DEBUG] start on_export_click(self)
+[2025-04-01 09:16:36] [DEBUG] start on_export(self)
+[2025-04-01 09:16:36] [DEBUG] start show_page(self, export)
+[2025-04-01 09:16:36] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:36] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:36] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:36] [DEBUG] end on_export(self)
+[2025-04-01 09:16:36] [DEBUG] start update_info_bar(self, Network exported successfully)
+[2025-04-01 09:16:36] [DEBUG] Error: info_bar does not exist or has been destroyed
+[2025-04-01 09:16:36] [DEBUG] end update_info_bar(self, info)
+[2025-04-01 09:16:36] [DEBUG] end on_export_click(self)
+[2025-04-01 09:16:43] [DEBUG] start show_page(self, export_confirm)
+[2025-04-01 09:16:43] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] start show_page(self, container)
+[2025-04-01 09:16:43] [DEBUG] end show_page(self, container)
+[2025-04-01 09:16:43] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:43] [DEBUG] start show_page(self, loading)
+[2025-04-01 09:16:43] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:43] [DEBUG] Exporting data with request: export_request None png_image_export_strategy C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data
+[2025-04-01 09:16:43] [DEBUG] start export_data(self, export_request None png_image_export_strategy C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data)
+[2025-04-01 09:16:43] [DEBUG] start parse_request(self, export_request None png_image_export_strategy C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data)
+[2025-04-01 09:16:43] [DEBUG] Parsing request: export_request None png_image_export_strategy C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data
+[2025-04-01 09:16:43] [DEBUG] Request starts correctly with 'export_request', stripping prefix
+[2025-04-01 09:16:43] [DEBUG] Split request into parts: ['None', 'png_image_export_strategy', 'C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data']
+[2025-04-01 09:16:43] [DEBUG] Extracted data_export_strategy: None, image_export_strategy: png_image_export_strategy, folder_location: C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data
+[2025-04-01 09:16:43] [DEBUG] Instantiating image export strategy: png_image_export_strategy
+[2025-04-01 09:16:43] [DEBUG] Request parsed successfully. Returning result.
+[2025-04-01 09:16:43] [DEBUG] start parse_request(self, request_str)
+[2025-04-01 09:16:43] [DEBUG] Folder verified: C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data
+[2025-04-01 09:16:43] [DEBUG] Created root folder: C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data\export_20250401_091643
+[2025-04-01 09:16:43] [DEBUG] Created folder: C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data\export_20250401_091643\image_export
+[2025-04-01 09:16:43] [DEBUG] Saved file: C:/Users/Logan/Documents/GitHub/Webslinger/test/export_data\export_20250401_091643\image_export\combined_network.png
+[2025-04-01 09:16:43] [DEBUG] Export request processed successfully.
+[2025-04-01 09:16:43] [DEBUG] end export_data(self, export_request)
+[2025-04-01 09:16:43] [DEBUG] start show_page(self, success)
+[2025-04-01 09:16:43] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:43] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:45] [DEBUG] start show_page(self, export)
+[2025-04-01 09:16:45] [DEBUG] start clear_body(self)
+[2025-04-01 09:16:45] [DEBUG] end clear_body(self)
+[2025-04-01 09:16:45] [DEBUG] end show_page(self, page_name)
+[2025-04-01 09:16:59] [DEBUG] end start_view(self)
+[2025-04-01 09:16:59] [DEBUG] end initiate_view_strategy(self, view, controller)
+[2025-04-01 09:16:59] [DEBUG] end initiate_view(self, view)

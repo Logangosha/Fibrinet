@@ -16,7 +16,7 @@ class SystemControllerInterface:
     def __init__(self):
         """
         Initializes the system controller and its managers.
-        Sets up the default Logger and CLI view.
+        Sets up the default CLI view.
         """
 
         # INITIALIZES MANAGERS
@@ -28,11 +28,6 @@ class SystemControllerInterface:
         self.state = SystemState()
         
         Logger.log("SystemControllerInterface initialized.")
-        
-        # SUBMITS DEFAULT CLI VIEW REQUEST
-        Logger.log("Submiting default cli view request")
-        self.initiate_view("cli")  
-
         Logger.log("end SystemControllerInterface__init__(self)")
 
     # HANDLES NETWORK INPUT
@@ -46,9 +41,11 @@ class SystemControllerInterface:
         Logger.log(f"start input_network(self, {input_data})")
         try: 
             Logger.log("Setting network from input_manager network")
+            self.network_manager.reset_network_state_manager()
             self.network_manager.set_network(self.input_manager.get_network(input_data))
             self.network_manager.state_manager.add_new_network_state(self.network_manager.network)
-        except Exception as ex: raise ex
+        except Exception as ex: 
+            raise ex
         Logger.log(f"Is a network loaded? {bool(self.network_manager.network)}")
         if self.network_manager.network:
             Logger.log("Setting system state to network loaded true")
@@ -139,9 +136,6 @@ class SystemControllerInterface:
             Logger.log("StateTransitionError: Cannot modify network, network not loaded.", Logger.LogPriority.ERROR)
             raise StateTransitionError()
         Logger.log(f"end modify_network_properties(self, {network_properties})")
-
-
-     # MODIFIES NETWORK PROPERTIES IF STATE ALLOWS
     
     # SETS DEGRADATION ENGINE STRATEGY
     def set_degradation_engine_strategy(self, degradation_engine_strategy):
@@ -164,12 +158,10 @@ class SystemControllerInterface:
         :param export_request: Request specifying export details.
         :raises StateTransitionError: If the state is invalid for export.
         """
-        
-
         Logger.log(f"start export_data(self, {export_request})")
-        if self.state.network_loaded and self.state.network_modified:
+        if self.state.network_loaded and not self.network_manager.state_manager.export_disabled:
+            self.export_manager.handle_export_request(self.network_manager.state_manager.network_state_history, export_request)
             Logger.log("Export request processed successfully.")
-            pass
         else:
             Logger.log("StateTransitionError: Cannot export data, invalid state.", Logger.LogPriority.ERROR)
             raise StateTransitionError()

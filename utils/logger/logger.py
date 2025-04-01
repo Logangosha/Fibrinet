@@ -16,6 +16,7 @@ class Logger:
         WARNING = 3
         ERROR = 4
         CRITICAL = 5
+        DEFAULT = 6
 
     is_logging_enabled = True
     log_storage_strategy = None

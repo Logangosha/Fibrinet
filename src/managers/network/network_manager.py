@@ -1,5 +1,5 @@
 from utils.logger.logger import Logger
-from .no_physics import NoPhysics
+from .degradation_engine.no_physics import NoPhysics
 from .network_state_manager import NetworkStateManager
 
 class NetworkManager:
@@ -29,10 +29,19 @@ class NetworkManager:
         self.network = network
         Logger.log(f"end set_network_(self, network)")
 
-    # GET NETWORK
-    def get_network(self):
+    # GET BASE NETWORK
+    def get_base_network(self):
         """
         Gets the network attribtue.  
+        """
+        Logger.log(f"start set_network(self)")
+        Logger.log(f"end set_network_(self, network)")
+        return self.state_manager.get_base_network_state()
+    
+    # GET LATEST NETWORK
+    def get_network(self):
+        """
+        Gets the latest network attribtue from network state manager.  
         """
         Logger.log(f"start set_network(self)")
         Logger.log(f"end set_network_(self, network)")
@@ -90,3 +99,11 @@ class NetworkManager:
             self.degradation_engine_strategy = degradation_engine_strategy
         Logger.log(f"end set_degradation_engine_strategy(self, degradation_engine_strategy)")
 
+    # RESET NETWORK STATE
+    def reset_network_state_manager(self):
+        """
+        Resets the network state manager and clears the history.
+        """
+        Logger.log(f"start reset_network_state(self)")
+        self.state_manager.reset_network_state()
+        Logger.log(f"end reset_network_state(self)")

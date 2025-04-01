@@ -76,28 +76,36 @@ class TkinterView(ViewStrategy):
 
         current_dir = os.path.dirname(os.path.abspath(__file__))
         self.image_paths = {
-            "Import":os.path.join(current_dir, "images/Import.png"),
+            "Import":os.path.join(current_dir, "images/Small_Import.png"),
             "Small_Import":os.path.join(current_dir, "images/XSmall_Import.png"),
             "Small_Left_Arrow":os.path.join(current_dir, "images/XSmall_Left_Arrow.png"),
-            "X":os.path.join(current_dir, "images/X.png"),
+            "X":os.path.join(current_dir, "images/Small_X.png"),
             "Small_X":os.path.join(current_dir, "images/XSmall_X.png"),
             "Small_Right_Arrow":os.path.join(current_dir, "images/XSmall_Right_Arrow.png"),
+            "Export":os.path.join(current_dir, "images/Small_Export.png"),
             "Small_Export":os.path.join(current_dir, "images/XSmall_Export.png"),
-            "Checkmark":os.path.join(current_dir, "images/Checkmark.png")
+            "Checkmark":os.path.join(current_dir, "images/Small_Checkmark.png")
         }
         self.button_images = {name: tk.PhotoImage(file=path) for name, path in self.image_paths.items()}
         
-        from .confirm_page import ConfirmPage
+        from .input_confirm_page import InputConfirmPage
         from .error_page import ErrorPage
         from .export_page import ExportPage
         from .input_page import InputPage
         from .modify_page import ModifyPage
+        from .export_confirm_page import ExportConfirmPage
+        from .success_page import SuccessPage
+        from .loading_page import LoadingPage
+
         self.page_classes = {
             "input": InputPage(self),
-            "confirm": ConfirmPage(self),
+            "input_confirm": InputConfirmPage(self),
+            "export_confirm": ExportConfirmPage(self),
             "error": ErrorPage(self),
             "export": ExportPage(self),
-            "modify": ModifyPage(self)
+            "modify": ModifyPage(self),
+            "success": SuccessPage(self),
+            "loading": LoadingPage(self)
         }
 
         # Initialize with the input page
@@ -120,6 +128,15 @@ class TkinterView(ViewStrategy):
             self.clear_body()
             page_class.show_page(self.page_content)  # Calls the show method of the page
         Logger.log(f"end show_page(self, page_name)")
+
+    def show_error_page(self, error_message):
+        """Displays the error page with a specific error message."""
+        Logger.log(f"start show_error_page(self, error_message={error_message})")
+        error_page = self.page_classes.get("error")
+        if error_page:
+            self.clear_body()
+            error_page.show_page(self.page_content, error_message)
+        Logger.log(f"end show_error_page(self, error_message)")
 
     # CLEAR BODY
     def clear_body(self):

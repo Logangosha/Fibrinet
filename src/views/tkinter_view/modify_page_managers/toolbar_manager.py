@@ -14,7 +14,7 @@ class ToolbarManager:
         self.buttons = {}
         Logger.log(f"end ToolbarManager__init__(self, modify_page)")
 
-    def setup_toolbar(self, container):
+    def setup_toolbar(self, controller, container):
         """Sets up the main toolbar frame, including the action and info bars."""
         Logger.log(f"start setup_toolbar(self, container)")
         self.toolbar_height = 100  # Set toolbar height
@@ -23,7 +23,7 @@ class ToolbarManager:
         self.toolbar_frame.pack_propagate(False)  # Prevent shrinking
 
         # Setup action and info bars
-        self.setup_action_bar()
+        self.setup_action_bar(controller)
         self.setup_info_bar()
 
         # Bind resizing event
@@ -39,15 +39,15 @@ class ToolbarManager:
         Logger.log(f"end update_toolbar_sizes(self, event)")
 
     # ----- ACTION BAR -----
-    def setup_action_bar(self):
+    def setup_action_bar(self, controller):
         """Creates the action bar and populates it with buttons."""
         Logger.log(f"start setup_action_bar(self)")
         self.action_bar = tk.Frame(self.toolbar_frame, bg=self.modify_page.ACTION_BAR_BG_COLOR)
         self.action_bar.place(x=0, y=0, relwidth=0.65, height=self.toolbar_height)
-        self.add_action_bar_buttons()
+        self.add_action_bar_buttons(controller)
         Logger.log(f"end setup_action_bar(self)")
 
-    def add_action_bar_buttons(self):
+    def add_action_bar_buttons(self, controller):
         """Adds buttons to the action bar."""
         Logger.log(f"start add_action_bar_buttons(self)")
         # Create a frame inside action_bar to hold buttons
@@ -73,8 +73,28 @@ class ToolbarManager:
                 state=tk.DISABLED,
                 activebackground=self.modify_page.ACTIVE_BG_COLOR
                 )
-            if name in ["import"]:
+            # Enable the "import" button, it's always active
+            if name == "import":
                 button.config(state=tk.ACTIVE, cursor="hand2")
+
+            # Enable or disable other buttons based on the network manager's flags
+            if name == "undo":
+                if controller.network_manager.state_manager.undo_disabled:
+                    button.config(state=tk.DISABLED)
+                else:
+                    button.config(state=tk.ACTIVE)
+            
+            if name == "redo":
+                if controller.network_manager.state_manager.redo_disabled:
+                    button.config(state=tk.DISABLED)
+                else:
+                    button.config(state=tk.ACTIVE)
+            
+            if name == "export":
+                if controller.network_manager.state_manager.export_disabled:
+                    button.config(state=tk.DISABLED)
+                else:
+                    button.config(state=tk.ACTIVE)
             button.pack(side=tk.LEFT, padx=15)
             self.buttons[name] = button
         Logger.log(f"end add_action_bar_buttons(self)")
@@ -144,7 +164,10 @@ class ToolbarManager:
     def update_info_bar(self, info):
         """Updates the info bar with a new message."""
         Logger.log(f"start update_info_bar(self, {info})")
-        self.info_bar.config(text=info)
+        if hasattr(self, "info_bar") and self.info_bar.winfo_exists():
+            self.info_bar.config(text=info)
+        else:
+            Logger.log("Error: info_bar does not exist or has been destroyed")
         Logger.log(f"end update_info_bar(self, info)")
 
     def clear_info_bar(self):

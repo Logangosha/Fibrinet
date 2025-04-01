@@ -8,6 +8,5 @@ class SystemState:
         """
         Initializes the system's state attributes such as network status and the current view.
         """
-        self.network_loaded = False          
-        self.network_modified = False  
+        self.network_loaded = False       
         self.current_view = None

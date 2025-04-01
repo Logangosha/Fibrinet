@@ -1,5 +1,5 @@
 from utils.logger.logger import Logger
-from .data_interpreter import DataInterpreter
+from .input_data_interpreter import InputDataInterpreter
 from ...models.exceptions import InvalidInputDataError, UnsupportedFileTypeError
 
 class InputManager:
@@ -12,7 +12,7 @@ class InputManager:
         Initializes the InputManager.
         """
         Logger.log(f"start InputManager __init__(self)")
-        self.data_interpreter = DataInterpreter()
+        self.data_interpreter = InputDataInterpreter()
         Logger.log(f"end InputManager __init__(self)")
 
     # GET NETWORK FROM INPUT DATA

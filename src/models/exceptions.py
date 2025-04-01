@@ -21,3 +21,12 @@ class UnsupportedFileTypeError(Exception):
     # INITIALIZES THE UNSUPPORTED FILE TYPE ERROR ERROR WITH A CUSTOM MESSAGE.
     def __init__(self, message="File type not supported."):
         super().__init__(message)
+
+class InvalidNetworkError(Exception):
+    """
+    Exception raised for invalid network types.
+    Example: tkinter_view expects a Network2D if a network 2D is not provided this will be raised. 
+    """
+    # INITIALIZES THE UNSUPPORTED FILE TYPE ERROR ERROR WITH A CUSTOM MESSAGE.
+    def __init__(self, message="Invalid Network Type."):
+        super().__init__(message)

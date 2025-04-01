@@ -1,6 +1,6 @@
 from utils.logger.logger import Logger
 from ...models.exceptions import InvalidInputDataError
-from ..network.network import Network
+from ..network.network_factory import NetworkFactory
 import pandas as pd
 from .data_processing_strategy import DataProcessingStrategy
 
@@ -43,11 +43,16 @@ class ExcelDataStrategy(DataProcessingStrategy):
         def add_current_table_to_tables():
             if current_table:
                 if table_number == 0:
-                    tables['NODES'] = current_table
+                    tables['nodes'] = current_table
                 elif table_number == 1:
-                    tables['EDGES'] = current_table
+                    tables['edges'] = current_table
                 elif table_number == 2:
-                    tables['META_NETWORK_PROPERTIES'] = current_table
+                    meta_data = {}
+                    for i in range(len(current_table.get(list(current_table.keys())[0]))):
+                        key = current_table.get(list(current_table.keys())[0])[i]
+                        value = current_table.get(list(current_table.keys())[1])[i]
+                        meta_data[key] = value
+                    tables['meta_data'] = meta_data
 
         # FOR EACH ROW IN DF
         for index, row in df.iterrows():
@@ -84,7 +89,11 @@ class ExcelDataStrategy(DataProcessingStrategy):
         add_current_table_to_tables()
 
         # CREATE AND RETURN NETWORK
-        network = Network(**tables)
-        Logger.log(f"end Process __init__(self, input_data)")
-        return network
+        try:
+            network = NetworkFactory.create_network(tables)
+            Logger.log(f"end Process __init__(self, input_data)")
+            return network
+        except ValueError as e:
+            Logger.log(f"Error creating network: {e}", Logger.LogPriority.ERROR)
+            raise InvalidInputDataError(f"Invalid input data: {e}")
     

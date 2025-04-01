@@ -1,19 +1,14 @@
 from utils.logger.logger import Logger
+from abc import ABC, abstractmethod
 
-class DataProcessingStrategy:
+class DataProcessingStrategy(ABC):
     """
     Abstract base class for data processing strategies.
     This class defines the interface for processing input data.
     """
-    # INITIALIZES DATAPROCESSINGSTRATEGY
-    def __init__(self):
-        """
-        Initializes the DataProcessingStrategy.
-        """
-        Logger.log(f"start DataProcessingStrategy __init__(self)")
-        Logger.log(f"end DataProcessingStrategy __init__(self)")
     
     # PROCESS INPUT DATA.
+    @abstractmethod
     def process(self, input_data):
         """
         Process input data to extract network data.

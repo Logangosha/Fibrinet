@@ -108,7 +108,7 @@ class InputPage(TkinterView):
         if file_path: 
             Logger.log(f"File selected: {file_path}")
             self.view.selected_file = file_path
-            self.view.show_page("confirm")
+            self.view.show_page("input_confirm")
         else:
             Logger.log("No file selected.")
         Logger.log(f"end on_upload_file_icon_button_click")

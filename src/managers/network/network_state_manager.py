@@ -1,5 +1,5 @@
 from utils.logger.logger import Logger
-from .network import Network
+from .networks.base_network import BaseNetwork
 
 class NetworkStateManager:
     """
@@ -14,12 +14,13 @@ class NetworkStateManager:
         self.network_state_history = []       # LIST TO STORE NETWORK STATE HISTORY
         self.current_state = None             # CURRENT ACTIVE NETWORK STATE
         self.current_network_state_index = 0  # INDEX OF THE CURRENT NETWORK STATE IN HISTORY
-        self.undo_disabled = False            # FLAG TO ENABLE/DISABLE UNDO
-        self.redo_disabled = False            # FLAG TO ENABLE/DISABLE REDO
+        self.undo_disabled = True             # FLAG TO ENABLE/DISABLE UNDO
+        self.redo_disabled = True             # FLAG TO ENABLE/DISABLE REDO
+        self.export_disabled = True           # FLAG TO ENABLE/DISABLE EXPORT
         Logger.log(f"end NetworkStateManager__init__")
 
     # ADDS NEW NETWORK STATE
-    def add_new_network_state(self, network_state: Network):
+    def add_new_network_state(self, network_state: BaseNetwork):
         """
         Adds a new network state to the history and updates the current network state.
         Disables redo functionality since a new network state invalidates future states.
@@ -41,10 +42,14 @@ class NetworkStateManager:
         self.current_network_state_index = len(self.network_state_history) - 1
 
         # ENABLE UNDO FUNCTIONALITY
-        self.undo_disabled = False
+        self.undo_disabled = len(self.network_state_history) <= 1
 
         # DISABLE REDO FUNCTIONALITY
         self.redo_disabled = True
+        
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
+        self.export_disabled = len(self.network_state_history) <= 1
+
         Logger.log("end add_new_state")
 
     # UNDO LAST NETWORK STATE
@@ -69,6 +74,9 @@ class NetworkStateManager:
         if self.current_network_state_index == 0:
             self.undo_disabled = True
         
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
+        self.export_disabled = len(self.network_state_history) <= 1
+
         Logger.log("end undo_last_state")
 
     # REDO LAST NETWORK STATE
@@ -92,5 +100,45 @@ class NetworkStateManager:
         # DISABLE REDO IF AT LAST NETWORK STATE IN HISTORY
         if self.current_network_state_index == len(self.network_state_history) - 1:
             self.redo_disabled = True
+
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
+        self.export_disabled = len(self.network_state_history) <= 1
         
         Logger.log("end redo_last_network_state")
+
+    # RETURNS THE BASE NETWORK STATE IN THE HISTORY
+    def get_base_network_state(self):
+        """
+        Returns the base network state in the history (position 0).
+        """
+        Logger.log("start get_base_network_state()")
+        
+        # RETURN THE BASE STATE IF IT EXISTS
+        if self.network_state_history:
+            base_state = self.network_state_history[0]
+            Logger.log("end get_base_network_state")
+            return base_state
+        
+        Logger.log("end get_base_network_state - no states in history")
+        return None  # Return None if there are no states in history
+    
+    def reset_network_state(self):
+        """
+        Resets the network state manager, clearing the history and setting the current state to None.
+        """
+        Logger.log("start reset_network_state()")
+        
+        # Clear the network state history
+        self.network_state_history = []
+        
+        # Reset the current state and network state index
+        self.current_state = None
+        self.current_network_state_index = 0
+        
+        # Re-enable or disable flags based on reset state
+        self.undo_disabled = True
+        self.redo_disabled = True
+        self.export_disabled = True
+        
+        Logger.log("end reset_network_state()")
+

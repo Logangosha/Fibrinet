@@ -1,5 +1,6 @@
 import tkinter as tk
 from utils.logger.logger import Logger  # Importing the logger
+from ....managers.network.networks.network_2d import Network2D
 
 class CanvasManager:
     def __init__(self, modify_page):
@@ -38,17 +39,17 @@ class CanvasManager:
         self.canvas.bind("<Button-1>", self.on_canvas_click)
         Logger.log("Canvas setup completed")
 
-    def draw_network(self, network):
+    def draw_2d_network(self, network: Network2D):
         """Renders the given network onto the canvas, scaled to fit in the first quadrant."""
         Logger.log("Drawing network...")
         self.clear_canvas()
         self.current_network = network  # Store for redrawing
 
-        if not network.properties.nodes:
+        if not network.nodes:
             return
 
-        nodes = {node.properties.N_ID: node for node in network.properties.nodes}
-        edges = {edge.properties.E_ID: edge for edge in network.properties.edges}
+        nodes = {node.n_id: node for node in network.nodes}
+        edges = {edge.e_id: edge for edge in network.edges}
 
         width = self.canvas.winfo_width()
         height = self.canvas.winfo_height()
@@ -56,8 +57,8 @@ class CanvasManager:
             return  # Avoid drawing before fully rendered
 
         # Compute bounds, ensuring only first quadrant
-        max_x = max(node.properties.N_X for node in nodes.values())
-        max_y = max(node.properties.N_Y for node in nodes.values())
+        max_x = max(node.n_x for node in nodes.values())
+        max_y = max(node.n_y for node in nodes.values())
 
         # Add space for labels
         label_padding = 30
@@ -73,16 +74,16 @@ class CanvasManager:
 
         # Draw edges
         for edge in edges.values():
-            node_from = nodes[edge.properties.N_FROM]
-            node_to = nodes[edge.properties.N_TO]
-            x1, y1 = node_from.properties.N_X * scale + offset_x, height - (node_from.properties.N_Y * scale + offset_y)
-            x2, y2 = node_to.properties.N_X * scale + offset_x, height - (node_to.properties.N_Y * scale + offset_y)
+            node_from = nodes[edge.n_from]
+            node_to = nodes[edge.n_to]
+            x1, y1 = node_from.n_x * scale + offset_x, height - (node_from.n_y * scale + offset_y)
+            x2, y2 = node_to.n_x * scale + offset_x, height - (node_to.n_y * scale + offset_y)
             edge_id = self.canvas.create_line(x1, y1, x2, y2, fill=self.EDGE_COLOR, width=self.EDGE_WIDTH)
             self.edge_drawings[edge_id] = edge
 
        # Draw nodes with a constant radius
         for node in nodes.values():
-            x, y = node.properties.N_X * scale + offset_x, height - (node.properties.N_Y * scale + offset_y)
+            x, y = node.n_x * scale + offset_x, height - (node.n_y * scale + offset_y)
             # Use fixed NODE_RADIUS (in pixels) for node size
             node_id = self.canvas.create_oval(
                 x - self.NODE_RADIUS, y - self.NODE_RADIUS, 
@@ -93,7 +94,7 @@ class CanvasManager:
             self.node_drawings[node_id] = node
 
             # Add label at the center of the node
-            # label_id = self.canvas.create_text(x, y, text=str(node.properties.N_ID), fill="white", font=("Arial", 10, "bold"))
+            # label_id = self.canvas.create_text(x, y, text=str(node.n_id), fill="white", font=("Arial", 10, "bold"))
             # self.node_labels[node_id] = label_id  # Store label ID
 
                 
@@ -130,7 +131,7 @@ class CanvasManager:
     def on_resize(self, event):
         """Redraws the network when the canvas is resized."""
         if self.current_network:
-            self.draw_network(self.current_network)
+            self.draw_2d_network(self.current_network)
 
     def get_selected_element(self):
         """Returns the currently selected element (node/edge) from the canvas."""
@@ -165,10 +166,10 @@ class CanvasManager:
     def convert_element_id_to_input_id(self, element_id):
         if element_id in self.node_drawings:
             node = self.node_drawings[element_id]
-            return node.properties.N_ID  # Send N_ID instead
+            return node.n_id  # Send N_ID instead
         elif element_id in self.edge_drawings:
             edge = self.edge_drawings[element_id]
-            return edge.properties.E_ID  # Send E_ID instead
+            return edge.e_id  # Send E_ID instead
     
     def get_element_type(self, element_id):
         if element_id in self.node_drawings: return "node"

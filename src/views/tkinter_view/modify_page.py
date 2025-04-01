@@ -40,8 +40,8 @@ class ModifyPage(TkinterView):
         """
         Logger.log(f"start show_page(self, container)")
         self.canvas_manager.setup_canvas(container)
-        self.canvas_manager.draw_network(self.view.controller.network_manager.get_network())
-        self.toolbar_manager.setup_toolbar(container)
+        self.canvas_manager.draw_2d_network(self.view.controller.network_manager.get_network())
+        self.toolbar_manager.setup_toolbar(self.view.controller, container)
         Logger.log(f"end show_page(self, container)")
 
     def remove_selected_element(self):
@@ -83,13 +83,14 @@ class ModifyPage(TkinterView):
         Updates the canvas by redrawing the entire network to reflect the latest state.
         """
         Logger.log(f"start update_canvas(self)")
-        self.canvas_manager.draw_network(self.view.controller.network_manager.get_network())
+        self.canvas_manager.draw_2d_network(self.view.controller.network_manager.get_network())
         Logger.log(f"end update_canvas(self)")
 
     def update_toolbar(self):
         self.toolbar_manager.disable_action_bar_button("remove") if self.canvas_manager.select_element == None else self.toolbar_manager.enable_action_bar_button("remove")
         self.toolbar_manager.disable_action_bar_button("undo") if self.view.controller.network_manager.state_manager.undo_disabled else self.toolbar_manager.enable_action_bar_button("undo")
         self.toolbar_manager.disable_action_bar_button("redo") if self.view.controller.network_manager.state_manager.redo_disabled else self.toolbar_manager.enable_action_bar_button("redo")
+        self.toolbar_manager.disable_action_bar_button("export") if self.view.controller.network_manager.state_manager.export_disabled else self.toolbar_manager.enable_action_bar_button("export")
 
     
     def on_undo(self):
