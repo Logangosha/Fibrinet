@@ -1,5 +1,8 @@
-# Webslinger
+# FibriNet
  App to model network under tension. 
+
+# Install Dependencies 
+pip install -r requirements.txt
 
 # To Make .Exe
 pyinstaller FibriNet.spec
