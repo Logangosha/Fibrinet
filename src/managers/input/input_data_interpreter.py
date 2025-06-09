@@ -29,8 +29,8 @@ class InputDataInterpreter:
         Logger.log(f"start get_data_processing_strategy __init__(self, {input_data})")
         # CHECK DOES FILE EXIST
         if not os.path.exists(input_data):
-            Logger.log(f"File ({input_data}) Not Found")
-            raise FileNotFoundError()
+            Logger.log(f"File ({input_data}) Not Found", Logger.LogPriority.ERROR)
+            raise FileNotFoundError(f"File ({input_data}) Not Found")
 
         file_size = os.path.getsize(input_data)
         file_name = os.path.basename(input_data)

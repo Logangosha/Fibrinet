@@ -41,7 +41,7 @@ class ExportConfirmPage(TkinterView):
         Logger.log(f"end ExportConfirmPage__init__(self, view)")
 
     # SHOW PAGE
-    def show_page(self, container):
+    def show_page(self, container, from_new_network=False):
         """
         Displays the Export Confirm Page with heading, subheading, and button options.
         
@@ -49,6 +49,7 @@ class ExportConfirmPage(TkinterView):
             container (tk.Frame): The container frame where the page content will be added.
         """
         Logger.log(f"start show_page(self, container)")
+        self.from_new_network = from_new_network
         center_frame = tk.Frame(container, bg=self.BG_COLOR)
         center_frame.pack(expand=True)
 
@@ -101,7 +102,7 @@ class ExportConfirmPage(TkinterView):
     def start_export(self):
         """Handles the start of the export, showing the loading page and running export in a separate thread."""
         # Show the loading page
-        self.view.show_page("loading")
+        self.view.show_page("loading", from_new_network=self.from_new_network)
         
         # Run the export in a separate thread to prevent UI freezing
         export_thread = threading.Thread(target=self.on_confirm_export)
@@ -119,8 +120,10 @@ class ExportConfirmPage(TkinterView):
             self.view.controller.export_data(export_request)
             
             # Once export is done, show the success page
-            self.view.show_page("success")
+            self.view.show_page("success", from_new_network=self.from_new_network)
         except Exception as e:
             Logger.log(f"Error during export: {str(e)}")
+            self.view.error_message = str(e)
+            self.view.show_page("error", error_message=str(e))
 
 

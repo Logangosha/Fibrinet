@@ -9,18 +9,18 @@ class PngExportStrategy(ImageExportStrategy):
         files = []
         
         # Create an image for each network state
-        images = [self.create_network_image(network) for network in network_state_history]
+        images = [self._create_network_image(network) for network in network_state_history]
         
         # Combine all the images into one
         if images:
-            combined_img = self.combine_images_vertically(images)
+            combined_img = self._combine_images_vertically(images)
             buffer = io.BytesIO()
             combined_img.save(buffer, format='PNG')
             files.append(("combined_network.png", buffer.getvalue()))
         
         return files
 
-    def create_network_image(self, network: BaseNetwork, padding=50, scale=10):
+    def _create_network_image(self, network: BaseNetwork, padding=50, scale=10):
         """Creates an image of a network state with dynamically adjusted width and height."""
         if not network.nodes:
             return Image.new("RGB", (100, 100), "white")  # Return a blank image if no nodes exist
@@ -62,7 +62,7 @@ class PngExportStrategy(ImageExportStrategy):
 
         return img
     
-    def combine_images_vertically(self, image_list):
+    def _combine_images_vertically(self, image_list):
         """Combines multiple images into one vertically stacked image."""
         max_width = max(img.width for img in image_list)
         total_height = sum(img.height for img in image_list)

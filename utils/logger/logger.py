@@ -18,6 +18,7 @@ class Logger:
         CRITICAL = 5
         DEFAULT = 6
 
+
     is_logging_enabled = True
     log_storage_strategy = None
     _log_lock = threading.Lock()

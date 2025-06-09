@@ -5,14 +5,15 @@ class BaseEdge:
     Represents an edge in a network with attributes and validation.
     """
 
-    schema = {"e_id"}
+    # SCHEMA DICTIONARY WITH ATTRIBUTE TYPES (e.g. {"e_id": int})
+    schema = {"e_id": int, "n_from": int, "n_to":int}
 
     def __init__(self, attributes):
         """
         Initializes an Edge with the given attributes.
 
         Params:
-            attributes: Dictionary of attributes for the edge.
+            attributes (dict): Dictionary of attributes for the edge.
 
         Raises:
             ValueError: If attributes do not conform to the schema.
@@ -51,28 +52,58 @@ class BaseEdge:
         Retrieves the value of a specific attribute.
 
         Params:
-            attribute_name: Name of the attribute to retrieve.
+            attribute_name (str): Name of the attribute to retrieve.
 
         Returns:
             Value of the requested attribute or None if not found.
         """
         return getattr(self, attribute_name, None)
 
-    def set_attribute(self, attribute_name, value):
+    @staticmethod
+    def safe_cast(value, expected_type):
         """
-        Sets an attribute value, ensuring it follows the schema.
+        Attempts to cast value to the expected type.
 
         Params:
-            attribute_name: Name of the attribute to set.
+            value: The value to cast.
+            expected_type: The type to cast to.
+
+        Returns:
+            The casted value.
+
+        Raises:
+            ValueError: If casting fails.
+        """
+        # HANDLE BOOLEAN SPECIAL CASE
+        try:
+            if expected_type == bool:
+                return str(value).strip().lower() in ["true", "1", "yes"]
+            return expected_type(value)
+        except (ValueError, TypeError):
+            raise ValueError(f"Invalid value: '{value}' is not of type {expected_type.__name__}")
+
+    def set_attribute(self, attribute_name, value):
+        """
+        Sets an attribute value, ensuring it follows the schema and types.
+
+        Params:
+            attribute_name (str): Name of the attribute to set.
             value: New value for the attribute.
 
         Raises:
-            ValueError: If the attribute is not allowed by the schema.
+            ValueError: If attribute is not in schema or value type is invalid.
         """
         Logger.log(f"start set_attribute(self, {attribute_name}, {value})")
-        # VALIDATE ATTRIBUTE AGAINST SCHEMA
+
+        # VALIDATE ATTRIBUTE EXISTS IN SCHEMA
         if self.schema and attribute_name not in self.schema:
             raise ValueError(f"Invalid attribute '{attribute_name}' according to schema.")
+
+        # GET EXPECTED TYPE FROM SCHEMA (DEFAULT TO str IF NOT SPECIFIED)
+        expected_type = self.schema.get(attribute_name, str)
+
+        # SAFE CAST VALUE TO EXPECTED TYPE
+        value = self.safe_cast(value, expected_type)
 
         # SET ATTRIBUTE VALUE
         setattr(self, attribute_name, value)
@@ -80,15 +111,15 @@ class BaseEdge:
         # ADD ATTRIBUTE TO LIST IF NOT ALREADY PRESENT
         if attribute_name not in self.attributes:
             self.attributes.append(attribute_name)
-        Logger.log("end set_attribute(self, attribute_name, value)")
 
+        Logger.log("end set_attribute(self, attribute_name, value)")
 
     def validate_attributes(self):
         """
         Validates if all attributes conform to the schema.
 
         Returns:
-            True if attributes are valid, False otherwise.
+            bool: True if attributes are valid, False otherwise.
         """
         Logger.log(f"start validate_attributes(self)")
         for attr in self.attributes:
@@ -97,13 +128,13 @@ class BaseEdge:
                 return False
         Logger.log(f"end validate_attributes(self)")
         return True
-    
+
     @classmethod
     def get_schema(cls):
         """
         Returns the schema of the edge class.
 
         Returns:
-            Set containing valid attribute names.
+            dict: The schema dictionary mapping attribute names to types.
         """
         return cls.schema

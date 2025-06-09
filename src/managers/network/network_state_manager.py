@@ -17,7 +17,83 @@ class NetworkStateManager:
         self.undo_disabled = True             # FLAG TO ENABLE/DISABLE UNDO
         self.redo_disabled = True             # FLAG TO ENABLE/DISABLE REDO
         self.export_disabled = True           # FLAG TO ENABLE/DISABLE EXPORT
+        self.is_new_network = False           # FLAG TO INDICATE IF A NEW NETWORK IS BEING BUILT
         Logger.log(f"end NetworkStateManager__init__")
+
+    # LOGS THE NETWORKS IN STATE HISTORY
+    def log_network_history(self):
+        """
+        Logs each network in the history using its own log_network method.
+        Marks the current network state.
+        """
+        Logger.log("start log_all_network_states()")
+
+        if not self.network_state_history:
+            Logger.log("No network states in history.")
+            return
+
+        for idx, network in enumerate(self.network_state_history):
+            is_current = " (CURRENT)" if idx == self.current_network_state_index else ""
+            Logger.log(f"--- Network State [{idx}]{is_current} ---")
+            network.log_network()
+
+        Logger.log("end log_all_network_states()")
+
+
+    # LOGG NETWORK ATT
+    def log_network_state_manager_attributes(self):
+        Logger.log("Logging NetworkStateManager attributes:")
+        Logger.log(f"  network_state_history (length): {len(self.network_state_history)}")
+        Logger.log(f"  current_state: {self.current_state}")
+        Logger.log(f"  current_network_state_index: {self.current_network_state_index}")
+        Logger.log(f"  undo_disabled: {self.undo_disabled}")
+        Logger.log(f"  redo_disabled: {self.redo_disabled}")
+        Logger.log(f"  export_disabled: {self.export_disabled}")
+
+
+    def _check_export_condition(self):
+        """
+        Determines whether export should be disabled.
+
+        Export is disabled if:
+        - There is no current state
+        - If is_new_network is True:
+            - Fewer than 2 nodes
+            - Fewer than 1 edge
+        - Any required meta_data key is missing or None
+
+        Returns:
+            True if export should be disabled, False otherwise.
+        """
+        Logger.log("start _check_export_condition()")
+
+        # Export is disabled if no current state
+        if not self.current_state:
+            Logger.log("No current state — disabling export.")
+            return True
+
+        # Check node and edge count only if building a new network
+        if getattr(self, "is_new_network", False):  # fallback to False if attribute is missing
+            if len(self.current_state.get_nodes()) < 2:
+                Logger.log("New network: Not enough nodes — disabling export.")
+                return True
+            if len(self.current_state.get_edges()) < 1:
+                Logger.log("New network: Not enough edges — disabling export.")
+                return True
+
+        # Check all required meta_data fields
+        has_all_meta_data = True
+        if self.current_state.schema and "meta_data" in self.current_state.schema:
+            for key in self.current_state.schema["meta_data"]:
+                if key not in self.current_state.meta_data or self.current_state.meta_data[key] is None:
+                    Logger.log(f"Missing or None meta_data key: {key} — disabling export.")
+                    has_all_meta_data = False
+                    break
+
+        Logger.log("end _check_export_condition()")
+        return not has_all_meta_data
+
+
 
     # ADDS NEW NETWORK STATE
     def add_new_network_state(self, network_state: BaseNetwork):
@@ -32,11 +108,15 @@ class NetworkStateManager:
         # SLICE THE NETWORK STATE HISTORY TO INCLUDE ITEMS FROM CURRENT NETWORK STATE INDEX AND BACK
         self.network_state_history = self.network_state_history[:self.current_network_state_index + 1]
 
+        import copy
+
+        cloned_state = copy.deepcopy(network_state)
+
         # ADD NEW NETWORK STATE TO HISTORY
-        self.network_state_history.append(network_state)
+        self.network_state_history.append(cloned_state)
 
         # SET NEW NETWORK STATE AS CURRENT NETWORK STATE
-        self.current_state = network_state
+        self.current_state = cloned_state
 
         # UPDATE CURRENT NETWORK STATE INDEX TO LAST INDEX OF HISTORY
         self.current_network_state_index = len(self.network_state_history) - 1
@@ -47,9 +127,9 @@ class NetworkStateManager:
         # DISABLE REDO FUNCTIONALITY
         self.redo_disabled = True
         
-        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
-        self.export_disabled = len(self.network_state_history) <= 1
-
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS AND ALL META DATA KEYS HAVE VALUES
+        self.export_disabled = self._check_export_condition()
+        self.log_network_state_manager_attributes()
         Logger.log("end add_new_state")
 
     # UNDO LAST NETWORK STATE
@@ -74,8 +154,11 @@ class NetworkStateManager:
         if self.current_network_state_index == 0:
             self.undo_disabled = True
         
-        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
-        self.export_disabled = len(self.network_state_history) <= 1
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS AND ALL META DATA KEYS HAVE VALUES
+        self.export_disabled = self._check_export_condition()
+
+        # LOG THE CURRENT STATE AFTER UNDO
+        self.log_network_state_manager_attributes()
 
         Logger.log("end undo_last_state")
 
@@ -101,8 +184,8 @@ class NetworkStateManager:
         if self.current_network_state_index == len(self.network_state_history) - 1:
             self.redo_disabled = True
 
-        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS
-        self.export_disabled = len(self.network_state_history) <= 1
+        # ENABLE EXPORT IF MORE THAN ONE STATE EXISTS AND ALL META DATA KEYS HAVE VALUES
+        self.export_disabled = self._check_export_condition()
         
         Logger.log("end redo_last_network_state")
 

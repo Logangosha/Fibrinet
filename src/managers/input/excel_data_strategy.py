@@ -19,7 +19,7 @@ class ExcelDataStrategy(DataProcessingStrategy):
     # PROCESS INPUT DATA.
     def process(self, input_data):
         """
-        Process input data to extract network data. Returns dictionary of network data. 
+        Process input data to extract network data. Returns network object. 
         
         Parameters:
         input_data: file input by user containing network data.

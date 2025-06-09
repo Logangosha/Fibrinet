@@ -15,12 +15,14 @@ class ExportPage(TkinterView):
         self.PAGE_HEADING_BG = view.HEADING_BG
         self.PAGE_SUBHEADING_FONT = view.SUBHEADING_FONT
         self.PAGE_SUBHEADING_BG = view.SUBHEADING_BG
+        self.from_new_network = False 
 
-    def show_page(self, container):
+    def show_page(self, container, from_new_network=False):
         """Displays the Export Page"""
         self.container = container
         center_frame = tk.Frame(container, bg=self.BG_COLOR)
         center_frame.pack(expand=True)
+        self.from_new_network = from_new_network
 
         # Page Heading
         self.export_heading = tk.Label(
@@ -55,28 +57,31 @@ class ExportPage(TkinterView):
         self.network_dropdown.config(bg=self.BG_COLOR, fg=self.FG_COLOR, width=25, font=self.PAGE_SUBHEADING_FONT)
         self.network_dropdown.pack(pady=5)
 
-        # Photo Export Heading
-        self.photo_label = tk.Label(
-            center_frame,
-            foreground=self.FG_COLOR,
-            font=self.PAGE_SUBHEADING_FONT,
-            background=self.PAGE_SUBHEADING_BG,
-            text="Select Photo Export Format"
-        )
-        self.photo_label.pack(pady=(10, 0))
+        # IF from_new_network is True, HIDE the photo export section
+        if not from_new_network:
+            
+            # Photo Export Heading
+            self.photo_label = tk.Label(
+                center_frame,
+                foreground=self.FG_COLOR,
+                font=self.PAGE_SUBHEADING_FONT,
+                background=self.PAGE_SUBHEADING_BG,
+                text="Select Photo Export Format"
+            )
+            self.photo_label.pack(pady=(10, 0))
 
-        # Photo Export Dropdown
-        self.photo_format_var = tk.StringVar(value="Do not export")
-        self.photo_dropdown = tk.OptionMenu(
-            center_frame,
-            self.photo_format_var,
-            "Do not export",
-            "PNG (.png)",
-            command=self.validate_submit
-        )
-        # Set the same font as headings
-        self.photo_dropdown.config(bg=self.BG_COLOR, fg=self.FG_COLOR, width=25, font=self.PAGE_SUBHEADING_FONT)
-        self.photo_dropdown.pack(pady=5)
+            # Photo Export Dropdown
+            self.photo_format_var = tk.StringVar(value="Do not export")
+            self.photo_dropdown = tk.OptionMenu(
+                center_frame,
+                self.photo_format_var,
+                "Do not export",
+                "PNG (.png)",
+                command=self.validate_submit
+            )
+            # Set the same font as headings
+            self.photo_dropdown.config(bg=self.BG_COLOR, fg=self.FG_COLOR, width=25, font=self.PAGE_SUBHEADING_FONT)
+            self.photo_dropdown.pack(pady=5)
 
         # Buttons Frame
         button_frame = tk.Frame(center_frame, bg=self.BG_COLOR)
@@ -90,7 +95,7 @@ class ExportPage(TkinterView):
             border="0",
             cursor="hand2",
             activebackground=self.view.ACTIVE_BG_COLOR,
-            command=lambda: self.view.show_page("modify")
+            command=lambda: self.view.show_page("new_network" if self.from_new_network else "modify")
         )
         self.back_button.pack(side=tk.LEFT, padx=45)
 
@@ -110,13 +115,21 @@ class ExportPage(TkinterView):
     def validate_submit(self, _event=None):
         """Enable submit button if a valid export option is selected."""
         network_selected = self.network_type_var.get() != "Do not export"
-        photos_selected = self.photo_format_var.get() != "Do not export"
+        # If from_new_network is True, do not check photo export
+        if self.from_new_network:
+            photos_selected = False
+        else:
+            photos_selected = self.photo_format_var.get() != "Do not export"
         self.submit_button.config(state=tk.NORMAL if network_selected or photos_selected else tk.DISABLED)
 
     def show_export_confirm(self):
         """Handles export logic"""
         network_type = self.network_type_var.get()
-        photo_format = self.photo_format_var.get()
+        # If from_new_network is True, do not check photo export
+        if self.from_new_network:
+            photo_format = "Do not export"
+        else:
+            photo_format = self.photo_format_var.get()
 
         data_export_strategy = None
         if network_type == "EXCEL (.xlsx)":
@@ -136,4 +149,4 @@ class ExportPage(TkinterView):
             'image_export_strategy': image_export_strategy,
             'folder_selected': folder_selected 
             }
-            self.view.show_page("export_confirm")
+            self.view.show_page("export_confirm", from_new_network=self.from_new_network)

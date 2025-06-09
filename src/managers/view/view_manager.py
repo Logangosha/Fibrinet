@@ -37,7 +37,7 @@ class ViewManager:
             # SELECTS A NEW VIEW STRATEGY
             new_view_strategy = self.view_request_interpreter.get_view_strategy(view, controller)
             Logger.log(f"Selected view strategy: {new_view_strategy}")
-        except ValueError():
+        except ValueError:
             raise
 
         # STOPS CURRENT VIEW STRATEGY IF ACTIVE

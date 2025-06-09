@@ -30,3 +30,13 @@ class InvalidNetworkError(Exception):
     # INITIALIZES THE UNSUPPORTED FILE TYPE ERROR ERROR WITH A CUSTOM MESSAGE.
     def __init__(self, message="Invalid Network Type."):
         super().__init__(message)
+        
+class NodeNotFoundError(Exception):
+    """Raised when a node ID is not found in the network."""
+    def __init__(self, message="Node ID not found in network."):
+        super().__init__(message)
+
+class EdgeNotFoundError(Exception):
+    """Raised when an edge ID is not found in the network."""
+    def __init__(self, message="Edge ID not found in network."):
+        super().__init__(message)

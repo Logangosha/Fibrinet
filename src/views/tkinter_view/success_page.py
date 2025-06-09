@@ -13,8 +13,9 @@ class SuccessPage(TkinterView):
         self.PAGE_SUBHEADING_FONT = view.SUBHEADING_FONT
         self.PAGE_SUBHEADING_BG = view.SUBHEADING_BG
 
-    def show_page(self, container):
+    def show_page(self, container, from_new_network=False):
         """Displays the Success Page"""
+        self.from_new_network = from_new_network
         self.container = container
         center_frame = tk.Frame(container, bg=self.BG_COLOR)
         center_frame.pack(expand=True)
@@ -51,6 +52,6 @@ class SuccessPage(TkinterView):
             border="0",
             cursor="hand2",
             activebackground=self.view.ACTIVE_BG_COLOR,
-            command=lambda: self.view.show_page("export")
+            command=lambda: self.view.show_page("export", from_new_network=self.from_new_network)
         )
         self.back_button.pack(side=tk.LEFT, padx=45)

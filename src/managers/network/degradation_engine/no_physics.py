@@ -1,5 +1,6 @@
 from utils.logger.logger import Logger
 from .degradation_engine_strategy import DegradationEngineStrategy
+from ....models.exceptions import NodeNotFoundError, EdgeNotFoundError
 import copy
 
 class NoPhysics(DegradationEngineStrategy):
@@ -22,6 +23,9 @@ class NoPhysics(DegradationEngineStrategy):
 
         # CREATE A COPY OF THE NETWORK
         new_network = copy.deepcopy(network)
+
+        if edge_id not in [edge.get_id() for edge in new_network.get_edges()]:
+            raise Exception(f"Edge ID '{edge_id}' not found in network.")
 
         # REMOVE THE EDGE WITH THE SPECIFIED ID
         new_network.remove_edge(edge_id)
@@ -51,6 +55,10 @@ class NoPhysics(DegradationEngineStrategy):
         # CREATE A COPY OF THE NETWORK
         new_network = copy.deepcopy(network)
 
+        if node_id not in [node.get_id() for node in new_network.get_nodes()]:
+            raise (f"Node ID '{node_id}' not found in network.")
+
+
         # REMOVE THE NODE WITH THE SPECIFIED ID
         new_network.remove_node(node_id)
 
@@ -66,4 +74,22 @@ class NoPhysics(DegradationEngineStrategy):
         new_network.nodes = new_nodes
 
         Logger.log(f"end degrade_node(self, network, {node_id})")
+        return new_network
+    
+    def relax_network(self, network):
+        """
+        NoPhysics relaxes the network by creating a copy of the network.
+
+        Params:
+            network: network object to be relaxed.
+
+        Returns:
+            A new Network object with all edges and nodes removed.
+        """
+        Logger.log("start relax_network(self, network)")
+
+        # CREATE A COPY OF THE NETWORK
+        new_network = copy.deepcopy(network)
+
+        Logger.log("end relax_network(self, network)")
         return new_network

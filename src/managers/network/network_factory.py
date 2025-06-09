@@ -1,13 +1,18 @@
+from collections import defaultdict
 from utils.logger.logger import Logger
 
 # TYPES OF NETWORKS
+from .networks.base_network import BaseNetwork
 from .networks.network_2d import Network2D
 
 # TYPES OF NODES
+from .nodes.base_node import BaseNode
 from .nodes.node_2d import Node2D
+from .nodes.fixable_node_2d import FixableNode2D
 
 # TYPES OF EDGES
-from .edges.edge_2d import Edge2D
+from .edges.base_edge import BaseEdge
+from .edges.edge_with_rest_length import EdgeWithRestLength
 
 class NetworkFactory:
     """
@@ -17,13 +22,14 @@ class NetworkFactory:
     """
     # DICTIONARY TO STORE REGISTERED NETWORK TYPES
     _network_types = {}
-    # DICTIONARY TO STORE REGISTERED NODE TYPES
-    _node_types = {}
-    # DICTIONARY TO STORE REGISTERED EDGE TYPES
-    _edge_types = {}
+    # REGISTERED NODE TYPES
+    _node_types = defaultdict(list)
+    # REGISTERED EDGE TYPES
+    _edge_types = defaultdict(list)
+
 
     @classmethod
-    def register_network_type(cls, network_type, network_class):
+    def register_network_type(cls, network_class):
         """
         Registers a network type with its corresponding network class.
 
@@ -31,32 +37,33 @@ class NetworkFactory:
         :param network_class: The class associated with the network type.
         """
         # LOGGING THE REGISTRATION OF NETWORK TYPE
-        Logger.log(f"Registering network type '{network_type}' with class {network_class}")
-        cls._network_types[network_type] = network_class
+        Logger.log(f"Registering network class {network_class}")
+        cls._network_types[network_class] = network_class
+
 
     @classmethod
-    def register_node_type(cls, network_type, node_class):
+    def register_node_type(cls, network_class, node_class):
         """
         Registers a node type with its corresponding node class.
 
-        :param network_type: The type of the network (e.g., "2D").
+        :param network_class: The type of the network (e.g., "2D").
         :param node_class: The class associated with the node type.
         """
         # LOGGING THE REGISTRATION OF NODE TYPE
-        Logger.log(f"Registering node type '{network_type}' with class {node_class}")
-        cls._node_types[network_type] = node_class
+        Logger.log(f"Registering node type '{network_class}' with class {node_class}")
+        cls._node_types[network_class].append(node_class)
 
     @classmethod
-    def register_edge_type(cls, network_type, edge_class):
+    def register_edge_type(cls, network_class, edge_class):
         """
         Registers an edge type with its corresponding edge class.
 
-        :param network_type: The type of the network (e.g., "2D").
+        :param network_class: The type of the network (e.g., "2D").
         :param edge_class: The class associated with the edge type.
         """
         # LOGGING THE REGISTRATION OF EDGE TYPE
-        Logger.log(f"Registering edge type '{network_type}' with class {edge_class}")
-        cls._edge_types[network_type] = edge_class
+        Logger.log(f"Registering edge type '{network_class}' with class {edge_class}")
+        cls._edge_types[network_class].append(edge_class)
 
     @classmethod
     def create_network(cls, data: dict):
@@ -88,11 +95,19 @@ class NetworkFactory:
                         node_list.append(node_dict)
                     
                     for node in node_list:
-                        node_class = cls._node_types.get(network_type)
-                        if node_class:
-                            nodes.append(node_class(node))
+                        node_classes = (
+                            cls._node_types.get(network_class, []) +
+                            cls._node_types.get(BaseNetwork, [])  # fallback
+                        )
+                        for node_class in node_classes:
+                            try:
+                                nodes.append(node_class(node))  # try creating it
+                                break
+                            except Exception as e:
+                                Logger.log(f"Node class {node_class} failed: {e}")
                         else:
-                            raise ValueError(f"No matching node type found for network type: {network_type}")
+                            raise ValueError(f"No matching node class for node: {node}")
+
                 data["nodes"] = nodes  # REPLACE ORIGINAL DATA WITH Node2D OBJECTS
 
                 edges = []
@@ -108,11 +123,20 @@ class NetworkFactory:
                         edge_list.append(edge_dict)
                     
                     for edge in edge_list:
-                        edge_class = cls._edge_types.get(network_type)
-                        if edge_class:
-                            edges.append(edge_class(edge))
+                        edge_classes = (
+                            cls._edge_types.get(network_class, []) +
+                            cls._edge_types.get(BaseNetwork, [])  # fallback
+                        )
+                        for edge_class in edge_classes:
+                            try:
+                                edges.append(edge_class(edge))  # Try creating edge
+                                break
+                            except Exception as e:
+                                Logger.log(f"Edge class {edge_class} failed: {e}")
                         else:
-                            raise ValueError(f"No matching edge type found for network type: {network_type}")
+                            raise ValueError(f"No matching edge class for edge: {edge}")
+
+
                 data["edges"] = edges  # REPLACE ORIGINAL DATA WITH Edge2D OBJECTS
 
                 # CREATE THE NETWORK USING THE CLASS FOUND
@@ -196,9 +220,33 @@ class NetworkFactory:
         Logger.log("Schema matching successful.")
         Logger.log("end _matches_schema(self, data)")
         return True
+    
+    @classmethod
+    def get_all_registered_components(cls):
+        """
+        Returns all registered network, node, and edge classes.
+
+        :return: A tuple of three lists: (network_classes, node_classes, edge_classes)
+        """
+        Logger.log("start get_all_registered_components()")
+        network_classes = list(set(cls._network_types.values()))
+        node_classes = list({cls for sublist in cls._node_types.values() for cls in sublist})
+        edge_classes = list({cls for sublist in cls._edge_types.values() for cls in sublist})
+        Logger.log("end get_all_registered_components()")
+        return network_classes, node_classes, edge_classes
+
 
 # REGISTER NETWORK, NODE, AND EDGE TYPES
-Logger.log(f"Registering types with factory...)")
-NetworkFactory.register_network_type("2D", Network2D)
-NetworkFactory.register_node_type("2D", Node2D)
-NetworkFactory.register_edge_type("2D", Edge2D)
+Logger.log("Registering types with factory...")
+
+# NETWORKS
+NetworkFactory.register_network_type(Network2D)
+
+# NODES
+NetworkFactory.register_node_type(Network2D, Node2D)
+NetworkFactory.register_node_type(Network2D, FixableNode2D)
+
+# EDGES
+NetworkFactory.register_edge_type(Network2D, BaseEdge)   
+NetworkFactory.register_edge_type(Network2D, EdgeWithRestLength)
+

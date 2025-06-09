@@ -1,4 +1,9 @@
 from .base_node import BaseNode
 
 class Node2D(BaseNode):
-    schema = BaseNode.get_schema().union({"n_x", "n_y"})
+    schema = {
+        **BaseNode.get_schema(),
+        "n_x": float,
+        "n_y": float
+    }
+

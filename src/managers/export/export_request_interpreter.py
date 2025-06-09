@@ -49,7 +49,8 @@ class ExportRequestInterpreter:
         request_str = request_str[len("export_request"):].strip()  
         
         # SPLIT THE REMAINING STRING INTO PARTS
-        parts = request_str.split()  
+        parts = request_str.split(maxsplit=2)  # LIMIT TO 3 PARTS
+        # LOG THE SPLIT PARTS
         Logger.log(f"Split request into parts: {parts}")
 
         # ENSURE THERE ARE EXACTLY 3 PARTS

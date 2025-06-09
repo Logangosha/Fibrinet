@@ -1,7 +1,9 @@
 import tkinter as tk
 import os
+import sys
 from src.managers.view.view_strategy import ViewStrategy
 from utils.logger.logger import Logger
+
 
 class TkinterView(ViewStrategy):
     """
@@ -38,6 +40,7 @@ class TkinterView(ViewStrategy):
     FONT_FAMILY = "Consolas"
     HEADING_FONT_SIZE = 45
     SUBHEADING_FONT_SIZE = 15
+    SUBHEADING_2_FONT_SIZE = 12
     BG_COLOR = "gray9"
     ACTIVE_BG_COLOR = "gray9"
     FG_COLOR = "white"
@@ -46,6 +49,7 @@ class TkinterView(ViewStrategy):
     HEADING_FONT = (FONT_FAMILY, HEADING_FONT_SIZE)
     HEADING_COLOR = FG_COLOR
     HEADING_BG = BG_COLOR
+    SUBHEADING_2_FONT = (FONT_FAMILY, SUBHEADING_2_FONT_SIZE)
     SUBHEADING_COLOR = FG_COLOR
     SUBHEADING_FONT = (FONT_FAMILY, SUBHEADING_FONT_SIZE)
     SUBHEADING_COLOR = FG_COLOR
@@ -67,6 +71,24 @@ class TkinterView(ViewStrategy):
         self.controller = controller
         self.running = True
         self.root = tk.Tk()
+
+        # Resource path helper
+        def resource_path(relative_path):
+            """
+            Get absolute path to resource, works for dev and for PyInstaller.
+            In dev, returns the relative path joined to current file's directory.
+            In PyInstaller, uses the _MEIPASS temp folder.
+            """
+            try:
+                # PyInstaller sets this attr when running in a bundle
+                base_path = sys._MEIPASS
+            except AttributeError:
+                # Running normally (e.g., from IDE or python script)
+                base_path = os.path.dirname(os.path.abspath(__file__))
+            
+            return os.path.join(base_path, relative_path)
+
+        self.root.iconbitmap(resource_path("images/FibriNet_Icon.ico"))
         self.root.title("FibriNet GUI")
         self.root.geometry("1000x800")
         self.root.attributes('-topmost', True)
@@ -74,18 +96,23 @@ class TkinterView(ViewStrategy):
         self.root.focus_force()
         self.root.minsize(800, 650)
 
-        current_dir = os.path.dirname(os.path.abspath(__file__))
+        
+
+        # Use resource_path to load images
         self.image_paths = {
-            "Import":os.path.join(current_dir, "images/Small_Import.png"),
-            "Small_Import":os.path.join(current_dir, "images/XSmall_Import.png"),
-            "Small_Left_Arrow":os.path.join(current_dir, "images/XSmall_Left_Arrow.png"),
-            "X":os.path.join(current_dir, "images/Small_X.png"),
-            "Small_X":os.path.join(current_dir, "images/XSmall_X.png"),
-            "Small_Right_Arrow":os.path.join(current_dir, "images/XSmall_Right_Arrow.png"),
-            "Export":os.path.join(current_dir, "images/Small_Export.png"),
-            "Small_Export":os.path.join(current_dir, "images/XSmall_Export.png"),
-            "Checkmark":os.path.join(current_dir, "images/Small_Checkmark.png")
+            "Import": resource_path("images/Small_Import.png"),
+            "Small_Import": resource_path("images/XSmall_Import.png"),
+            "Small_Left_Arrow": resource_path("images/XSmall_Left_Arrow.png"),
+            "X": resource_path("images/Small_X.png"),
+            "Small_X": resource_path("images/XSmall_X.png"),
+            "Small_Right_Arrow": resource_path("images/XSmall_Right_Arrow.png"),
+            "Export": resource_path("images/Small_Export.png"),
+            "Small_Export": resource_path("images/XSmall_Export.png"),
+            "Checkmark": resource_path("images/Small_Checkmark.png"),
+            "Plus": resource_path("images/Small_Plus.png")
         }
+
+
         self.button_images = {name: tk.PhotoImage(file=path) for name, path in self.image_paths.items()}
         
         from .input_confirm_page import InputConfirmPage
@@ -96,6 +123,7 @@ class TkinterView(ViewStrategy):
         from .export_confirm_page import ExportConfirmPage
         from .success_page import SuccessPage
         from .loading_page import LoadingPage
+        from .new_network_page import NewNetworkPage
 
         self.page_classes = {
             "input": InputPage(self),
@@ -105,7 +133,8 @@ class TkinterView(ViewStrategy):
             "export": ExportPage(self),
             "modify": ModifyPage(self),
             "success": SuccessPage(self),
-            "loading": LoadingPage(self)
+            "loading": LoadingPage(self), 
+            "new_network": NewNetworkPage(self),
         }
 
         # Initialize with the input page
@@ -115,18 +144,19 @@ class TkinterView(ViewStrategy):
         Logger.log(f"end TkinterView __init__(self, controller)")
 
     # SHOW PAGE
-    def show_page(self, page_name):
+    def show_page(self, page_name, **kwargs):
         """
         General method to show any page. 
         
         Args: 
             page_name: this is a string of the page name .
+            **kwargs: Arbitrary keyword arguments to pass to the page's show_page method
         """
         Logger.log(f"start show_page(self, {page_name})")
         page_class = self.page_classes.get(page_name)
         if page_class:
             self.clear_body()
-            page_class.show_page(self.page_content)  # Calls the show method of the page
+            page_class.show_page(self.page_content, **kwargs)  # Calls the show method of the page
         Logger.log(f"end show_page(self, page_name)")
 
     def show_error_page(self, error_message):
@@ -145,7 +175,10 @@ class TkinterView(ViewStrategy):
         """
         Logger.log(f"start clear_body(self)")
         for widget in self.page_content.winfo_children():
-            widget.destroy()
+            try:
+                widget.destroy()
+            except Exception as e:
+                Logger.log(f"Warning destroying widget: {e}")
         Logger.log(f"end clear_body(self)")
 
     # START VIEW

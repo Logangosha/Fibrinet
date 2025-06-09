@@ -8,12 +8,13 @@ def main():
     """
     # CONFIGURES LOGGER WITH DEFAULT FILE STORAGE
     Logger.initialize()
+    Logger.disable_logging() 
 
     # INITIALIZE THE SCI
     controller = SystemController()
 
     # START THE TKINER VIEW
-    controller.initiate_view("cli")
+    controller.initiate_view("tkinter")
 
 if __name__ == "__main__":
     main()

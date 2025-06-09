@@ -31,8 +31,12 @@ class InputManager:
         # GET DATA PROCESSING STRATEGY FROM INPUT DATA
         try:
             data_processing_strategy = self.data_interpreter.get_data_processing_strategy(input_data)
-        except UnsupportedFileTypeError():
+        except UnsupportedFileTypeError:
             raise
+        except FileNotFoundError as ex:
+            Logger.log(ex, Logger.LogPriority.ERROR)
+            raise
+
 
         try:
             Logger.log(f"end get_network __init__(self, input_data)")

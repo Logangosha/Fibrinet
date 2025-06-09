@@ -50,10 +50,7 @@ class InputPage(TkinterView):
     # SHOW PAGE
     def show_page(self, container):
         """
-        Displays the Input Page with heading, subheading, and a file upload button.
-        
-        Args:
-            container (tk.Frame): The container frame where the page content will be added.
+        Displays the Input Page with heading, subheading, and buttons for uploading or creating a network.
         """
         Logger.log(f"start show_page(self, {container})")
         center_frame = tk.Frame(container, bg=self.BG_COLOR)
@@ -73,14 +70,17 @@ class InputPage(TkinterView):
             foreground=self.FG_COLOR,
             font=self.PAGE_SUBHEADING_FONT,
             background=self.PAGE_SUBHEADING_BG,
-            text="Please import network data to begin. Data files must be .xlsx. (press button below)",
+            text="Start by uploading an existing network data file (.xlsx), or create a new one from scratch.",
             wraplength=450,
             justify="center"
         )
         self.input_subheading.pack(pady=(0, 20))
 
+        button_frame = tk.Frame(center_frame, bg=self.BG_COLOR)
+        button_frame.pack(pady=20)
+
         self.upload_file_icon_button = tk.Button(
-            center_frame,
+            button_frame,
             image=self.button_images["Import"],
             bg=self.view.ICON_BUTTON_BG,
             border="0",
@@ -90,8 +90,41 @@ class InputPage(TkinterView):
             pady=10,
             activebackground=self.view.ACTIVE_BG_COLOR
         )
-        self.upload_file_icon_button.pack(pady=20)
+        self.upload_file_icon_button.grid(row=0, column=0, padx=30) 
+
+        separator = tk.Label(
+            button_frame,
+            text="|",
+            font=("Arial", 14),
+            bg=self.BG_COLOR,
+            fg=self.FG_COLOR
+        )
+        separator.grid(row=0, column=1, padx=10)
+
+
+        self.create_new_network_button = tk.Button(
+            button_frame,
+            image=self.button_images["Plus"],  
+            bg=self.view.ICON_BUTTON_BG,
+            border="0",
+            cursor="hand2",
+            command=self.on_create_new_network_button_click,  
+            padx=10,
+            pady=10,
+            activebackground=self.view.ACTIVE_BG_COLOR
+        )
+        self.create_new_network_button.grid(row=0, column=2, padx=30)
+
         Logger.log("end show_page(self, container)")
+
+    # ON CREATE NEW NETWORK BUTTON CLICK
+    def on_create_new_network_button_click(self):
+        Logger.log("start on_create_new_network_button_click")
+        # Placeholder logic — customize this!
+        self.view.selected_file = None
+        self.view.show_page("new_network")  
+        Logger.log("end on_create_new_network_button_click")
+
 
     # ON UPLOAD FILE ICON BUTTON CLICK
     def on_upload_file_icon_button_click(self):

@@ -37,3 +37,14 @@ class DegradationEngineStrategy():
         """
         # MUST BE IMPLEMENTED IN A SUBCLASS TO DEGRADE NODE
         raise NotImplementedError()
+    
+    # RELAX NETWORK
+    def relax_network(self, network):
+        """
+        Relaxes the specified network.
+
+        Params: 
+            network: network object to be relaxed.
+        """
+        # MUST BE IMPLEMENTED IN A SUBCLASS TO RELAX NETWORK
+        raise NotImplementedError()
